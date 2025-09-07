@@ -1,0 +1,43 @@
+---
+title: "Bítacora #1"
+author: "Olman Camacho"
+format: html
+editor: visual
+---
+
+## Integrantes
+
+-Olman Camacho Jerez C31523
+
+Tema propuesto: Análisis de datos de COVID-19 (Mortalidad diaria, Transmición diaria (por lo menos un estimado), y comparar dichos datos entre diversos países)
+
+-Cristhian
+
+Tema propuesto: Analizar las preferencia de las personas en USA sobre las casas que se comprar, ya sea por habitaciones, lugar geográfica
+
+-Jose Manuel Alfaro Monge C30244
+
+Tema propuesto: Análisis de primas de seguros de salud: estudiar cómo influyen variables como edad, sexo y hábito de fumar en el costo del seguro.
+
+### Tema escogido:
+Análisis de primas de seguros de salud
+
+## Razón del tema:
+Después de una discusión grupal y hablar con el profesor de los temas propuestos, vimos que el tema de primas era un poco más variado y resulta un poco más sencillo a la hora de buscar fuentes de donde extraer la información. Además de que, durante la discusión, supimos que queriamos ir más por dicho tema propuesto.
+
+## Pregunta de Investigación:
+¿Qué tanto impactan las variables edad, sexo y condición de fumador en las primas de seguros de salud?
+
+## Objetos de estudio
+•	Primas de seguros de salud registradas en el dataset insurance.
+•	Variables explicativas: edad, sexo, fumador/no fumador, IMC (índice de masa corporal), número de hijos, región.
+
+## Conceptos que fundamentan la investigación
+1.	Prima de seguro: cantidad de dinero que paga el asegurado a la compañía aseguradora.
+2.	Riesgo actuarial: probabilidad de que un evento adverso ocurra, ajustado por las características de cada individuo.
+3.	Modelos de regresión: herramientas estadísticas que permiten estimar el efecto de variables independientes sobre una dependiente (en este caso, el costo del seguro).
+
+## Teorías que fundamentan la investigación
+1.	Teoría del riesgo: los costos del seguro se determinan en función de la probabilidad de ocurrencia de un evento y su severidad.
+2.	Teoría actuarial de primas puras: la prima se calcula con base en el valor esperado de los costos futuros de siniestros.
+3.	Teoría de la selección adversa: las personas con mayor riesgo (ejemplo fumadores) tienden a demandar más seguros, lo que influye en los precios.
