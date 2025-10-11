@@ -48,6 +48,10 @@ head(datos, 5)
 
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
+3- Resumen de 5 números de las variables cuantitativas y analizar el mismo.
+
+4- Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas. 
+
 ```{r}
 
 #str(datos)
