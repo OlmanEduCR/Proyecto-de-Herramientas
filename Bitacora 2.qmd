@@ -1,0 +1,66 @@
+---
+title: "Bitacora  2"
+author: Cristhian
+format: pdf
+editor: visual
+---
+
+## Integrantes
+
+-Cristhian Jimenez Campos C33973
+
+-Olman Camacho Jerez C31523
+
+-Jose Manuel Alfaro Monge C30244
+
+## Datos
+
+Descripción de la tabla de datos.
+
+Caracteristicas de la tabla
+
+Esta base de datos contiene registros de 4424 estudiantes, quienes serán clasificados de distintas maneras, desde estado civil hasta los cursos que están cursando, entre otros. La base de datos fue publicada en 2021 y presenta diversos factores, incluyendo variables relacionadas con los padres, para analizar si influyen en la vida académica del estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins, Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico de Portalegre en Portugal, y descargada desde el enlace [link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success). Los datos corresponden al segundo semestre, aunque no se especifica el año.
+
+Las variables están distribuidas en distintas categorías: variables relacionadas con la trayectoria académica, variables demográficas y variables socioeconómicas. Los tipos de datos incluyen variables reales, categóricas y enteras.
+
+Poblacion de estudio:
+
+Estudiantes matriculados en diferentes carreras de pregrado de una institucion de educacion superior.
+
+Muestra observada.\
+4,424 estudiantes.
+
+Unidad estadística o individuos.\
+Cada uno de los 4,424 estudiantes de educación superior durante determinados semestres.
+
+Identificación de las variables de estudio.\
+Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
+
+primeas 5 filas de la tabla de datos \
+
+```{r}
+library(dplyr)
+datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+head(datos, 5)
+
+```
+
+La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
+
+```{r}
+#str(datos)
+vars_cuantitativas <- datos %>%
+select(where(is.numeric)) %>%
+colnames()
+
+vars_cuantitativas
+
+
+```
+
+\
+
+```{r}
+
+
+```
