@@ -1,6 +1,6 @@
 ---
 title: "Bitacora  2"
-author: Cristhian
+author: Cristhian, Olman, Jose
 format: pdf
 editor: visual
 ---
@@ -36,10 +36,11 @@ Cada uno de los 4,424 estudiantes de educación superior durante determinados se
 Identificación de las variables de estudio.\
 Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
 
-primeas 5 filas de la tabla de datos \
+primeas 5 filas de la tabla de datos\
 
 ```{r}
 library(dplyr)
+library(ggplot2)
 datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 head(datos, 5)
 
@@ -48,13 +49,18 @@ head(datos, 5)
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
 ```{r}
+
 #str(datos)
-vars_cuantitativas <- datos %>%
-select(where(is.numeric)) %>%
-colnames()
+variables_cuantitativas <- names(select(datos, where(is.numeric)))
 
-vars_cuantitativas
-
+for (var in variables_cuantitativas){
+  h <- ggplot(datos, aes_string(x=var))+
+    geom_histogram(fill = "#66CDAA", color = "#79CDCD", bins = 30) +
+     labs(title = paste("Histograma de", var), x = var, y = "Frecuencia") +
+    theme_minimal()
+  print(h)
+}
+  
 
 ```
 
