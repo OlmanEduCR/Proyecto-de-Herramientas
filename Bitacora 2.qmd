@@ -13,6 +13,8 @@ editor: visual
 
 -Jose Manuel Alfaro Monge C30244
 
+1- Identifique los siguientes puntos para los datos con los que realizará su proyecto:
+
 ## Datos
 
 Descripción de la tabla de datos.
@@ -36,7 +38,7 @@ Cada uno de los 4,424 estudiantes de educación superior durante determinados se
 Identificación de las variables de estudio.\
 Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
 
-primeas 5 filas de la tabla de datos\
+2- primeas 5 filas de la tabla de datos\
 
 ```{r}
 library(dplyr)
@@ -70,7 +72,10 @@ for (var in variables_cuantitativas){
 
 \
 
-```{r}
+5- Hacer al menos dos gráficos que describan la relación entre las variables.
 
+6- Hacer al menos un gráfico que muestre la distribución de las variables categóricas.
 
-```
+7- Identificar valores faltantes y posibles outliers.
+
+8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
