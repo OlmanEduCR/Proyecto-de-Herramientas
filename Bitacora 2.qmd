@@ -51,7 +51,21 @@ datos
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
 3- Resumen de 5 números de las variables cuantitativas y analizar el mismo.
+```{r}
+library(dplyr)
+# Se seleciona las variables cuantitaticas
+variables_cuantitativas <- select_if(datos, is.numeric)
+# Calcular resumen de 5 números para cada variable
+#'Vamos a usar sapply para aplicar la funcion fivenum a la base
+#'el firenum es una funcion que nos ayuda a calcular el minimo y maximo, los Q1 y Q3, ademas de eso la mediana 
+resumen_5_numeros <- sapply(variables_cuantitativas, fivenum)
+#para no tener problema trasponemos a resumen_5_numeros
+resumen_5_numeros <- t(resumen_5_numeros)
+#'Para facilitar la lectura vamos a ponerle nosmbres claros a las columnas
+colnames(resumen_5_numeros) <- c("Minimo","Q1","Mediana","Q3","Máximo")
+print(resumen_5_numeros)
 
+```
 4- Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas. 
 
 ```{r}
@@ -112,4 +126,8 @@ grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nac
 8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
 
 9- Bibliografía
+<https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
+
+<https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
+
 .data
