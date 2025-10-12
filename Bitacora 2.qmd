@@ -45,34 +45,19 @@ library(dplyr)
 library(ggplot2)
 datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 head(datos, 5)
-
+datos
 ```
 
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
 3- Resumen de 5 números de las variables cuantitativas y analizar el mismo.
 
-```{r}
-library(dplyr)
-# Se seleciona las variables cuantitaticas
-variables_cuantitativas <- select_if(datos, is.numeric)
-# Calcular resumen de 5 números para cada variable
-#'Vamos a usar sapply para aplicar la funcion fivenum a la base
-#'el firenum es una funcion que nos ayuda a calcular el minimo y maximo, los Q1 y Q3, ademas de eso la mediana 
-resumen_5_numeros <- sapply(variables_cuantitativas, fivenum)
-#para no tener problema trasponemos a resumen_5_numeros
-resumen_5_numeros <- t(resumen_5_numeros)
-#'Para facilitar la lectura vamos a ponerle nosmbres claros a las columnas
-colnames(resumen_5_numeros) <- c("Minimo","Q1","Mediana","Q3","Máximo")
-print(resumen_5_numeros)
-
-```
-
 4- Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas. 
 
 ```{r}
 
 #str(datos)
+variables_cuantitativas <- names(select(datos, where(is.numeric)))
 
 for (var in variables_cuantitativas){
   h <- ggplot(datos, aes_string(x=var))+
@@ -88,6 +73,37 @@ for (var in variables_cuantitativas){
 \
 
 5- Hacer al menos dos gráficos que describan la relación entre las variables.
+```{r}
+grafico_internacional_genero <- function(df, genero, internacional, pais) {
+  df_plot <- df %>%
+    mutate(
+      genero = factor({{genero}}, levels = c(1, 0), labels = c("Hombres", "Mujeres")),
+      tipo = factor({{internacional}}, levels = c(0, 1), labels = c("Nacional", "Internacional"))
+    ) %>%
+    group_by(genero, tipo) %>%
+    summarise(Frecuencia = n(), .groups = "drop")
+  
+  ggplot(df_plot, aes(x = tipo, y = Frecuencia, fill = genero)) +
+    geom_col(position = "dodge", width = 0.7) +
+    geom_text(aes(label = Frecuencia),
+              position = position_dodge(width = 0.7),
+              vjust = -0.3, size = 3.5) +
+    scale_fill_manual(values = c("steelblue", "darkorange")) +
+    labs(
+      title = "Distribución de Internacionales y Nacionales por Género",
+      x = "Lugar de Procedencia",
+      y = "Frecuencia",
+      fill = "Género"
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(
+      legend.position = "bottom",
+      plot.title = element_text(face = "bold"),
+      axis.text.x = element_text(angle = 0, hjust = 0.5)
+    )
+}
+grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nacionality)
+```
 
 6- Hacer al menos un gráfico que muestre la distribución de las variables categóricas.
 
@@ -95,7 +111,5 @@ for (var in variables_cuantitativas){
 
 8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
 
-Bibliografia\
-<https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
-
-<https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
+9- Bibliografía
+.data
