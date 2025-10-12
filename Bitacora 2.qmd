@@ -51,6 +51,7 @@ datos
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
 3- Resumen de 5 números de las variables cuantitativas y analizar el mismo.
+
 ```{r}
 library(dplyr)
 # Se seleciona las variables cuantitaticas
@@ -66,6 +67,9 @@ colnames(resumen_5_numeros) <- c("Minimo","Q1","Mediana","Q3","Máximo")
 print(resumen_5_numeros)
 
 ```
+
+La tabla muestra el resumen de 5 numeros de las variables cuantitativas de nuentra base de datos. en la tabla se puede ver que la mayoria de las variables tienen un minimo de en 0, la forma en la que se evualua nuestra variables es de una manera difereente ya que estas van con diferentes rangos par asignarles puede que sea continio o que se llegue a saltar numeros, pasa de 33 o 53 y cosas así.
+
 4- Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas. 
 
 ```{r}
@@ -87,6 +91,7 @@ for (var in variables_cuantitativas){
 \
 
 5- Hacer al menos dos gráficos que describan la relación entre las variables.
+
 ```{r}
 grafico_internacional_genero <- function(df, genero, internacional, pais) {
   df_plot <- df %>%
@@ -126,8 +131,11 @@ grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nac
 8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
 
 9- Bibliografía
+
 <https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
 
 <https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
+
+<https://www.uca.edu.sv/mpe/wp-content/uploads/2020/09/61.-Hernandez-W-y-Montano-Y.-2020-Analisis-de-la-desercion-escolar.pdf>
 
 .data
