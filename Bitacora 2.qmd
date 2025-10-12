@@ -128,6 +128,40 @@ grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nac
 
 7- Identificar valores faltantes y posibles outliers.
 
+```{r}
+datos_faltantes <- datos %>% 
+  filter(if_any(everything(),is.na))
+datos_faltantes
+
+datos %>% 
+  summarise(
+    across(
+      where(is.numeric),
+      ~sum(
+        .<quantile(.,0.25,na.rm=TRUE)-1.5*IQR(.)|
+        .>quantile(.,0.75,na.rm=TRUE)+1.5*IQR(.),na.rm = TRUE
+        
+      )
+    )
+  )#cantidad de outliners por variable
+
+es_outlier <- function(x) {
+  
+  if(!is.numeric(x)) return(rep(FALSE,length(x)))
+  q1 <- quantile(x,0.25,na.rm = TRUE)
+  q3 <- quantile(x,0.75,na.rm = TRUE)
+  
+  resultado <- x<(q1-1.5*IQR(x,na.rm = TRUE))|
+                x>(q3+1.5*IQR(x,na.rm = TRUE))
+  return(resultado)
+}
+
+outliers <- as.data.frame(sapply(datos,es_outlier))
+outliers
+
+```
+
+
 8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
 
 9- Bibliografía
