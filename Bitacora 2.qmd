@@ -247,6 +247,40 @@ head(outliers)
 
 ## Investigar técnicas que permitan subsanar los valores perdidos y outliers:
 
+Manejo de valores faltantes y outliers
+
+Valores faltantes:
+
+  Los valores faltantes pueden ser tratados mediante diferentes métodos que modifican los datos de distinta manera. Por eso, a la hora de utilizar estos valores, sus resultados se verán afectados de mayor o menor manera forma dependiendo de la técnica utilizada.
+  Existen técnicas como la eliminación de los datos faltantes, sin embargo, esta práctica puede perjudicar al análisis de los datos, por lo que nos centraremos en los métodos que buscan modificarlos de manera que aporten información.
+  Se pueden utilizar métodos simples como la imputación por la media, mediana o moda, que son métodos fáciles de implementar, sin embargo, estos datos pueden verse distorsionados por la presencia de valores atípicos. Por eso existen métodos más robustos como la imputación por vecinos más cercanos, imputación por regresión, imputación múltiple o por series de tiempo. Estas técnicas conservan de mejor manera la estructura de los datos.
+
+Outliers:
+
+  Hay tres opciones posibles a la hora de enfrentar un outlier, tanto univariable como multivariable, estas opciones son eliminarlo, mantenerlo o reemplazarlo.
+  Al igual que en los valores faltantes, se pueden eliminar todos los outliers, pero este método provoca pérdida de información que es normalmente valiosa y aporta a la investigación. También se tiene la opción de utilizar métodos simples como reemplazarlos por la media o moda, aunque el uso de estas técnicas no es recomendado porque pueden generar resultados artificiales y sesgados. Por lo tanto, se recomienda utilizar técnicas más robustas que reduzcan la influencia y no los eliminen por completo.
+
+Ahora veremos algunas formas de enfrentar los outliers dependiendo de que sean univariables o multivariables.
+
+Outliers univariable
+
+Detectar y clasificar:
+  Se realiza una revisión manual para determinar si son errores, casos aleatorios o datos de interés que se deberían analizar por separado. Luego se decide individualmente qué hacer con cada uno.
+
+Winsorización:
+  Se sustituye el dato por el valor del percentil más cercano. Esto conserva la estructura de los datos y limita los efectos sobre las estadísticas principales.
+
+Outliers multivariable
+
+Revisión contextual:
+  Se verifica que las variables que se estén comparando no tengan una relación incoherente o anómala que genere valores extraños o fuera de contexto.
+
+Análisis por separado:
+  Se analizan los casos atípicos como un conjunto separado a los datos comunes para identificar patrones y no alterar los datos principales.
+
+Regresión:
+  Son métodos que consisten en modelar la relación de una variable dependiente con otras independientes, para evaluar la influencia de los outliers sobre las relaciones entre variables.
+
 #### Bibliografía:
 
 <https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
@@ -254,3 +288,4 @@ head(outliers)
 <https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
 
 <https://www.uca.edu.sv/mpe/wp-content/uploads/2020/09/61.-Hernandez-W-y-Montano-Y.-2020-Analisis-de-la-desercion-escolar.pdf>
+
