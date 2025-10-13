@@ -44,7 +44,7 @@ execute:
 
 El objeto de estudio es el fenómeno de la deserción escolar, entendido como el abandono prematuro del sistema educativo formal por parte de estudiantes, antes de completar el nivel educativo correspondiente.
 
-### Conceptos 
+### Conceptos
 
 #### Deserción escolar
 
@@ -64,7 +64,35 @@ Entendemos a los factores sociales como toda aquella influencia externa relacion
 
 Esta teoría es un aporte del investigador Abram Amsel que, según Alejandro Baquero (2007) la Teoría de la Frustración de Abram Amsel expone la elaboración de una hipótesis acerca de la función de la omisión decepcionante de recompensa en circunstancias de recompensa no continua. De acuerdo a esa teoría, en la etapa de adquisición, el sujeto se instruye a prever la recompensa obtenida en el contexto experimental debido a la presencia de claves contextuales que las anuncian. Luego, cuando sorprendentemente se omite la recompensa, el sujeto provoca una reacción emocional natural y aversiva denominada frustración que en la actualidad es precedida por las señales que previamente indicaban una recompensa. Esto genera un enfrentamiento al inicio del entrenamiento debido a que tanto la frustración como la recompensa son pronosticados por condicionamiento clásico debido a los mismos estímulos condicionados. A medida que avanza el entrenamiento, por efecto de un contracondicionamiento, el conflicto se resuelve a favor de contestar ya que el refuerzo no es predecible en una situación habitual de refuerzo incompleto, dado que en pruebas donde hay elementos que indican la falta de un refuerzo, se fortalece la respuesta instrumental. De esta manera, la respuesta continúa al introducir la extinción puesto que se ha condicionado a la previsión de falta de recompensa. Por otro lado, en los sujetos que reciben refuerzo constante, no existe nada que los estimule a contestar sin recibir recompensa.
 
+## **Teoría de los Factores Múltiples**
+
+La teoría de factores múltiples mantiene que la deserción escolar tiene varios factores, como, individual, sociales y académico. Basándonos en la base da datos que amos a trabajar, uno de estos factores son el desempeño académico, el nivel de educación, el facto de la familia, esto puede aumentar el riesgo de que un alumno abandone la universidad.
+
+La deserción no se ve afectada por un único factor, generalmente se ven afectados por una interacción múltiple de factores y en ocasiones no se logran captar estas razones. Es importante detectar la deserción académica a tiempo para poder ayudar al estudiante con tutorías, apoyo económico y programas de acompañamiento psicológico, las cueles pueden ayudar  para que el estudiante no deserte. Además de identificar estos factores o cuál factor tiene más peso para la deserción del estudiante.
+
+## **Teoría de los Factores Económicos y Apoyo Familiar en la Deserción Universitaria**
+
+Esta teoría viene de varios documentos, en el cual se menciona que las dificultades económicas relacionadas con la estabilidad familia o individual, llegan a tener un impacto importante en los estudiantes haciendo que la probabilidad de que un estudiante esté en peligro de abandono de la universidad sea mayor. Cuando se tiene problemas económicos tanto individuales como en el grupo familiar, esto llega a significar una gran presión a los estudiantes, haciendo que traten de apoyar a sus familiares, generando que dejen de lado la universidad.
+
+Para llegar a liberar presión sobre los estudiantes, el acceso a becas y ayudas financieras se identifican como un factor que ayuda a los estudiantes para evitar que estén en peligro de abandonar la universidad, dándoles un respiro y apoyo, teniendo un impacto en el rendimiento.
+
 #### Bibliografía
+
+<https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf>
+
+<http://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007>
+
+<https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S2215-34702021000100019>
+
+<http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-93042023000301206#B56>
+
+<https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf>
+
+<http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S2145-94442014000200010>
+
+<https://revie.gob.do/index.php/revie/article/view/193/365>
+
+<https://www.ride.org.mx/index.php/RIDE/article/view/1923/5020>
 
 Dzay Chulim, F., Narváez Trejo, O. M., Universidad de Quintana Roo, & Universidad Veracruzana. (2012). *La deserción escolar desde la perspectiva estudiantil* \[Book\]. La Editorial Manda. https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf
 
@@ -94,7 +122,7 @@ Cada uno de los 4,424 estudiantes de educación superior durante determinados se
 
 Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
 
-## Primeas 5 filas de la tabla de datos: 
+## Primeas 5 filas de la tabla de datos:
 
 ```{r}
 library(dplyr)
@@ -129,7 +157,7 @@ La tabla muestra el resumen de 5 numeros de las variables cuantitativas de nuent
 
 ```{r}
 
-#str(datos)
+
 variables_cuantitativas <- names(select(datos, where(is.numeric)))
 
 for (var in variables_cuantitativas){
@@ -146,8 +174,8 @@ for (var in variables_cuantitativas){
 ## Hacer al menos dos gráficos que describan la relación entre las variables:
 
 ```{r}
-grafico_internacional_genero <- function(df, genero, internacional, pais) {
-  df_plot <- df %>%
+grafico_internacional_genero <- function(datos, genero, internacional, pais) {
+  df_plot <- datos %>%
     mutate(
       genero = factor({{genero}}, levels = c(1, 0), labels = c("Hombres", "Mujeres")),
       tipo = factor({{internacional}}, levels = c(0, 1), labels = c("Nacional", "Internacional"))
@@ -177,7 +205,7 @@ grafico_internacional_genero <- function(df, genero, internacional, pais) {
 grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nacionality)
 
 gráfico_necesidad_genero <- function(df, genero, needs){
-  df_plot <- df %>%
+  df_plot <- datos %>%
     mutate(
       genero = factor({{genero}}, levels = c(1, 0), labels = c("Hombres", "Mujeres")),
       necesidades = factor({{needs}}, levels = c(0, 1),
@@ -251,35 +279,27 @@ Manejo de valores faltantes y outliers
 
 Valores faltantes:
 
-  Los valores faltantes pueden ser tratados mediante diferentes métodos que modifican los datos de distinta manera. Por eso, a la hora de utilizar estos valores, sus resultados se verán afectados de mayor o menor manera forma dependiendo de la técnica utilizada.
-  Existen técnicas como la eliminación de los datos faltantes, sin embargo, esta práctica puede perjudicar al análisis de los datos, por lo que nos centraremos en los métodos que buscan modificarlos de manera que aporten información.
-  Se pueden utilizar métodos simples como la imputación por la media, mediana o moda, que son métodos fáciles de implementar, sin embargo, estos datos pueden verse distorsionados por la presencia de valores atípicos. Por eso existen métodos más robustos como la imputación por vecinos más cercanos, imputación por regresión, imputación múltiple o por series de tiempo. Estas técnicas conservan de mejor manera la estructura de los datos.
+Los valores faltantes pueden ser tratados mediante diferentes métodos que modifican los datos de distinta manera. Por eso, a la hora de utilizar estos valores, sus resultados se verán afectados de mayor o menor manera forma dependiendo de la técnica utilizada. Existen técnicas como la eliminación de los datos faltantes, sin embargo, esta práctica puede perjudicar al análisis de los datos, por lo que nos centraremos en los métodos que buscan modificarlos de manera que aporten información. Se pueden utilizar métodos simples como la imputación por la media, mediana o moda, que son métodos fáciles de implementar, sin embargo, estos datos pueden verse distorsionados por la presencia de valores atípicos. Por eso existen métodos más robustos como la imputación por vecinos más cercanos, imputación por regresión, imputación múltiple o por series de tiempo. Estas técnicas conservan de mejor manera la estructura de los datos.
 
 Outliers:
 
-  Hay tres opciones posibles a la hora de enfrentar un outlier, tanto univariable como multivariable, estas opciones son eliminarlo, mantenerlo o reemplazarlo.
-  Al igual que en los valores faltantes, se pueden eliminar todos los outliers, pero este método provoca pérdida de información que es normalmente valiosa y aporta a la investigación. También se tiene la opción de utilizar métodos simples como reemplazarlos por la media o moda, aunque el uso de estas técnicas no es recomendado porque pueden generar resultados artificiales y sesgados. Por lo tanto, se recomienda utilizar técnicas más robustas que reduzcan la influencia y no los eliminen por completo.
+Hay tres opciones posibles a la hora de enfrentar un outlier, tanto univariable como multivariable, estas opciones son eliminarlo, mantenerlo o reemplazarlo. Al igual que en los valores faltantes, se pueden eliminar todos los outliers, pero este método provoca pérdida de información que es normalmente valiosa y aporta a la investigación. También se tiene la opción de utilizar métodos simples como reemplazarlos por la media o moda, aunque el uso de estas técnicas no es recomendado porque pueden generar resultados artificiales y sesgados. Por lo tanto, se recomienda utilizar técnicas más robustas que reduzcan la influencia y no los eliminen por completo.
 
 Ahora veremos algunas formas de enfrentar los outliers dependiendo de que sean univariables o multivariables.
 
 Outliers univariable
 
-Detectar y clasificar:
-  Se realiza una revisión manual para determinar si son errores, casos aleatorios o datos de interés que se deberían analizar por separado. Luego se decide individualmente qué hacer con cada uno.
+Detectar y clasificar: Se realiza una revisión manual para determinar si son errores, casos aleatorios o datos de interés que se deberían analizar por separado. Luego se decide individualmente qué hacer con cada uno.
 
-Winsorización:
-  Se sustituye el dato por el valor del percentil más cercano. Esto conserva la estructura de los datos y limita los efectos sobre las estadísticas principales.
+Winsorización: Se sustituye el dato por el valor del percentil más cercano. Esto conserva la estructura de los datos y limita los efectos sobre las estadísticas principales.
 
 Outliers multivariable
 
-Revisión contextual:
-  Se verifica que las variables que se estén comparando no tengan una relación incoherente o anómala que genere valores extraños o fuera de contexto.
+Revisión contextual: Se verifica que las variables que se estén comparando no tengan una relación incoherente o anómala que genere valores extraños o fuera de contexto.
 
-Análisis por separado:
-  Se analizan los casos atípicos como un conjunto separado a los datos comunes para identificar patrones y no alterar los datos principales.
+Análisis por separado: Se analizan los casos atípicos como un conjunto separado a los datos comunes para identificar patrones y no alterar los datos principales.
 
-Regresión:
-  Son métodos que consisten en modelar la relación de una variable dependiente con otras independientes, para evaluar la influencia de los outliers sobre las relaciones entre variables.
+Regresión: Son métodos que consisten en modelar la relación de una variable dependiente con otras independientes, para evaluar la influencia de los outliers sobre las relaciones entre variables.
 
 #### Bibliografía:
 
@@ -288,4 +308,3 @@ Regresión:
 <https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
 
 <https://www.uca.edu.sv/mpe/wp-content/uploads/2020/09/61.-Hernandez-W-y-Montano-Y.-2020-Analisis-de-la-desercion-escolar.pdf>
-
