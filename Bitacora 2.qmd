@@ -1,8 +1,29 @@
 ---
-title: "Bitacora  2"
-author: Cristhian, Olman, Jose
-format: pdf
-editor: visual
+title: "BITÁCORA 2 - GRUPO 2"
+author: |
+  **Integrantes:**
+  
+  - Cristhian Jimenez Campos — C33973 
+  - Olman Camacho Jerez — C31523  
+  - Jose Manuel Alfaro Monge — C30244
+
+format:
+  pdf:
+    toc: false
+    number-sections: false
+    mainfont: "Times New Roman"
+    fontsize: 12pt
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=2.5cm
+      - right=2.5cm
+    linestretch: 1.5
+    latex-engine: xelatex
+execute:
+  echo: true
+  warning: false
+  message: false
 ---
 
 ## Integrantes
@@ -13,44 +34,78 @@ editor: visual
 
 -Jose Manuel Alfaro Monge C30244
 
-1- Identifique los siguientes puntos para los datos con los que realizará su proyecto:
+# Bitácora 1
+
+### Pregunta de Investigación
+
+¿Cuáles son los factores individuales, sociales y académicos que más inciden en la predicción de la deserción escolar en estudiantes de nivel secundaria?
+
+### Objeto de Estudio
+
+El objeto de estudio es el fenómeno de la deserción escolar, entendido como el abandono prematuro del sistema educativo formal por parte de estudiantes, antes de completar el nivel educativo correspondiente.
+
+### Conceptos 
+
+#### Deserción escolar
+
+Según Spady, citado por Floricely Dzay Chulim (2012), menciona dos definiciones operacionales acerca de la deserción universitaria: a) Incluye a cualquier persona que abandona la institución de educación superior donde se encuentra registrado y b) Se refiere a aquellas personas que reciben un título o grado de cualquier univesidad. Esta segunda definición sostiene que el o la estudiante que haya empezado un proceso de aprendizaje superior, y en un cierto periodo de tiempo no ha obtenido su respectivo título o grado, se puede considerar un desertor.
+
+#### Factores personales
+
+Entendemos a los factores personales como todas aquella carácterísticas internas del estudiante como la motivación, las actitudes y las habilidades cognitivas, que influyen directamente su aprendizaje.
+
+#### Factores sociales
+
+Entendemos a los factores sociales como toda aquella influencia externa relacionada con el entorno del estudiante, que se presenta en la vida del mismo de manera inesperada, o al menos no planeada, que provenga directamente de su circulo personal (familiares, amigos cercanos, entre otros), de manera que su rendimiento académico se ve directamente afectado.
+
+### Teorías
+
+#### Teoría de la Frustración
+
+Esta teoría es un aporte del investigador Abram Amsel que, según Alejandro Baquero (2007) la Teoría de la Frustración de Abram Amsel expone la elaboración de una hipótesis acerca de la función de la omisión decepcionante de recompensa en circunstancias de recompensa no continua. De acuerdo a esa teoría, en la etapa de adquisición, el sujeto se instruye a prever la recompensa obtenida en el contexto experimental debido a la presencia de claves contextuales que las anuncian. Luego, cuando sorprendentemente se omite la recompensa, el sujeto provoca una reacción emocional natural y aversiva denominada frustración que en la actualidad es precedida por las señales que previamente indicaban una recompensa. Esto genera un enfrentamiento al inicio del entrenamiento debido a que tanto la frustración como la recompensa son pronosticados por condicionamiento clásico debido a los mismos estímulos condicionados. A medida que avanza el entrenamiento, por efecto de un contracondicionamiento, el conflicto se resuelve a favor de contestar ya que el refuerzo no es predecible en una situación habitual de refuerzo incompleto, dado que en pruebas donde hay elementos que indican la falta de un refuerzo, se fortalece la respuesta instrumental. De esta manera, la respuesta continúa al introducir la extinción puesto que se ha condicionado a la previsión de falta de recompensa. Por otro lado, en los sujetos que reciben refuerzo constante, no existe nada que los estimule a contestar sin recibir recompensa.
+
+#### Bibliografía
+
+Dzay Chulim, F., Narváez Trejo, O. M., Universidad de Quintana Roo, & Universidad Veracruzana. (2012). *La deserción escolar desde la perspectiva estudiantil* \[Book\]. La Editorial Manda. https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf
+
+# Bitácora 2
 
 ## Datos
 
-Descripción de la tabla de datos.
-
-Caracteristicas de la tabla
+#### Caracteristicas de la tabla:
 
 Esta base de datos contiene registros de 4424 estudiantes, quienes serán clasificados de distintas maneras, desde estado civil hasta los cursos que están cursando, entre otros. La base de datos fue publicada en 2021 y presenta diversos factores, incluyendo variables relacionadas con los padres, para analizar si influyen en la vida académica del estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins, Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico de Portalegre en Portugal, y descargada desde el enlace [link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success). Los datos corresponden al segundo semestre, aunque no se especifica el año.
 
 Las variables están distribuidas en distintas categorías: variables relacionadas con la trayectoria académica, variables demográficas y variables socioeconómicas. Los tipos de datos incluyen variables reales, categóricas y enteras.
 
-Poblacion de estudio:
+#### Poblacion de estudio:
 
 Estudiantes matriculados en diferentes carreras de pregrado de una institucion de educacion superior.
 
-Muestra observada.\
+#### Muestra observada:
+
 4,424 estudiantes.
 
-Unidad estadística o individuos.\
+#### Unidad estadística o individuos:
+
 Cada uno de los 4,424 estudiantes de educación superior durante determinados semestres.
 
-Identificación de las variables de estudio.\
+#### Identificación de las variables de estudio:
+
 Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
 
-2- primeas 5 filas de la tabla de datos\
+## Primeas 5 filas de la tabla de datos: 
 
 ```{r}
 library(dplyr)
 library(ggplot2)
 datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 head(datos, 5)
-datos
 ```
 
 La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
 
-3- Resumen de 5 números de las variables cuantitativas y analizar el mismo.
+## Resumen de 5 números de las variables cuantitativas y analizar el mismo:
 
 ```{r}
 library(dplyr)
@@ -70,7 +125,7 @@ print(resumen_5_numeros)
 
 La tabla muestra el resumen de 5 numeros de las variables cuantitativas de nuentra base de datos. en la tabla se puede ver que la mayoria de las variables tienen un minimo de en 0, la forma en la que se evualua nuestra variables es de una manera difereente ya que estas van con diferentes rangos par asignarles puede que sea continio o que se llegue a saltar numeros, pasa de 33 o 53 y cosas así.
 
-4- Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas. 
+## Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas:
 
 ```{r}
 
@@ -88,9 +143,7 @@ for (var in variables_cuantitativas){
 
 ```
 
-\
-
-5- Hacer al menos dos gráficos que describan la relación entre las variables.
+## Hacer al menos dos gráficos que describan la relación entre las variables:
 
 ```{r}
 grafico_internacional_genero <- function(df, genero, internacional, pais) {
@@ -155,14 +208,14 @@ gráfico_necesidad_genero <- function(df, genero, needs){
 gráfico_necesidad_genero(datos, datos$Gender, datos$Educational.special.needs)
 ```
 
-6- Hacer al menos un gráfico que muestre la distribución de las variables categóricas.
+## Hacer al menos un gráfico que muestre la distribución de las variables categóricas:
 
-7- Identificar valores faltantes y posibles outliers.
+## Identificar valores faltantes y posibles outliers:
 
 ```{r}
 datos_faltantes <- datos %>% 
   filter(if_any(everything(),is.na))
-datos_faltantes
+head(datos_faltantes)
 
 datos %>% 
   summarise(
@@ -188,14 +241,13 @@ es_outlier <- function(x) {
 }
 
 outliers <- as.data.frame(sapply(datos,es_outlier))
-outliers
+head(outliers)
 
 ```
 
+## Investigar técnicas que permitan subsanar los valores perdidos y outliers:
 
-8- Investigar técnicas que permitan subsanar los valores perdidos y outliers.
-
-9- Bibliografía
+#### Bibliografía:
 
 <https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
 
