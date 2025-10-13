@@ -156,17 +156,14 @@ La tabla muestra el resumen de 5 numeros de las variables cuantitativas de nuent
 ## Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas:
 
 ```{r}
-
-
-variables_cuantitativas <- names(select(datos, where(is.numeric)))
-
-for (var in variables_cuantitativas){
-  h <- ggplot(datos, aes_string(x=var))+
-    geom_histogram(fill = "#66CDAA", color = "#79CDCD", bins = 30) +
-     labs(title = paste("Histograma de", var), x = var, y = "Frecuencia") +
-    theme_minimal()
-  print(h)
-}
+ggplot(datos, aes(x = factor(Curricular.units.2nd.sem..evaluations.))) +
+  geom_bar(fill = "#C26827", color = "#000000") +
+  labs(
+    title = "Distribución de Evaluaciones - 2do Semestre",
+    x = "Cantidad de Evaluaciones",
+    y = "Frecuencia"
+  ) +
+  theme_minimal()
   
 
 ```
@@ -237,6 +234,19 @@ gráfico_necesidad_genero(datos, datos$Gender, datos$Educational.special.needs)
 ```
 
 ## Hacer al menos un gráfico que muestre la distribución de las variables categóricas:
+
+```{r}
+ggplot(datos, aes(x = factor(Gender, 
+                             levels = c(0, 1), 
+                             labels = c("Mujer", "Hombre")))) +
+  geom_bar(fill = "#6049A6", color = "#42298A") +
+  labs(
+    title = "Distribución por Género",
+    x = "Género",
+    y = "Frecuencia"
+  ) +
+  theme_minimal()
+```
 
 ## Identificar valores faltantes y posibles outliers:
 
