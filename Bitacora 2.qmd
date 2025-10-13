@@ -122,6 +122,37 @@ grafico_internacional_genero <- function(df, genero, internacional, pais) {
     )
 }
 grafico_internacional_genero(datos, datos$Gender, datos$International, datos$Nacionality)
+
+gráfico_necesidad_genero <- function(df, genero, needs){
+  df_plot <- df %>%
+    mutate(
+      genero = factor({{genero}}, levels = c(1, 0), labels = c("Hombres", "Mujeres")),
+      necesidades = factor({{needs}}, levels = c(0, 1),
+      labels = c("Sin necesidades especiales", "Con necesidades especiales"))
+    ) %>%
+    group_by(genero, necesidades) %>%
+    summarise(Frecuencia = n(), .groups = "drop")
+  
+  ggplot(df_plot, aes(x = necesidades, y = Frecuencia, fill = genero)) +
+    geom_col(position = "dodge", width = 0.7) +
+    geom_text(aes(label = Frecuencia),
+    position = position_dodge(width = 0.7),
+    vjust = -0.3, size = 3.5) +
+    scale_fill_manual(values = c("steelblue", "darkorange")) +
+    labs(
+      title = "Distribución de Necesidades Educativas Especiales por Género",
+      x = "Condición",
+      y = "Frecuencia",
+      fill = "Género"
+    ) +
+    theme_minimal(base_size = 12) +
+    theme(
+      legend.position = "bottom",
+      plot.title = element_text(face = "bold"),
+      axis.text.x = element_text(angle = 0, hjust = 0.5)
+    )
+}
+gráfico_necesidad_genero(datos, datos$Gender, datos$Educational.special.needs)
 ```
 
 6- Hacer al menos un gráfico que muestre la distribución de las variables categóricas.
@@ -171,5 +202,3 @@ outliers
 <https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
 
 <https://www.uca.edu.sv/mpe/wp-content/uploads/2020/09/61.-Hernandez-W-y-Montano-Y.-2020-Analisis-de-la-desercion-escolar.pdf>
-
-.data
