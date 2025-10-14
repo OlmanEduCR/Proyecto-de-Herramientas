@@ -36,79 +36,90 @@ execute:
 
 # Bitácora 1
 
-### Pregunta de Investigación
+### Pregunta de investigación
 
-¿Cuáles son los factores individuales, sociales y académicos que más inciden en la predicción de la deserción escolar en estudiantes de nivel secundaria?
+¿Cuáles son los factores individuales, sociales y académicos que más inciden en la predicción de la deserción escolar en estudiantes de nivel secundario?
 
-### Objeto de Estudio
+### Objeto de estudio
 
-El objeto de estudio es el fenómeno de la deserción escolar, entendido como el abandono prematuro del sistema educativo formal por parte de estudiantes, antes de completar el nivel educativo correspondiente.
+El objeto de estudio es el fenómeno de la deserción escolar, entendido como el abandono prematuro del sistema educativo formal por parte de los estudiantes antes de completar el nivel educativo correspondiente.
 
 ### Conceptos
 
-#### Deserción escolar
+#### Deserción escolar:
 
-Según Spady, citado por Floricely Dzay Chulim (2012), menciona dos definiciones operacionales acerca de la deserción universitaria: a) Incluye a cualquier persona que abandona la institución de educación superior donde se encuentra registrado y b) Se refiere a aquellas personas que reciben un título o grado de cualquier univesidad. Esta segunda definición sostiene que el o la estudiante que haya empezado un proceso de aprendizaje superior, y en un cierto periodo de tiempo no ha obtenido su respectivo título o grado, se puede considerar un desertor.
+Según Spady, citado por Floricely Dzay Chulim (2012), se mencionan dos definiciones operacionales acerca de la deserción universitaria:
 
-#### Factores personales
+a) Incluye a cualquier persona que abandona la institución de educación superior donde se encuentra registrada.\
+b) Se refiere a aquellas personas que no reciben un título o grado de ninguna universidad.
 
-Entendemos a los factores personales como todas aquella carácterísticas internas del estudiante como la motivación, las actitudes y las habilidades cognitivas, que influyen directamente su aprendizaje.
+Esta segunda definición sostiene que el o la estudiante que haya iniciado un proceso de aprendizaje superior y, en un determinado periodo de tiempo, no haya obtenido su respectivo título o grado, puede considerarse un desertor.
 
-#### Factores sociales
+#### Factores personales:
 
-Entendemos a los factores sociales como toda aquella influencia externa relacionada con el entorno del estudiante, que se presenta en la vida del mismo de manera inesperada, o al menos no planeada, que provenga directamente de su circulo personal (familiares, amigos cercanos, entre otros), de manera que su rendimiento académico se ve directamente afectado.
+Se entienden como factores personales todas aquellas características internas del estudiante, como la motivación, las actitudes y las habilidades cognitivas, que influyen directamente en su aprendizaje.
+
+#### Factores sociales:
+
+Los factores sociales se refieren a todas aquellas influencias externas relacionadas con el entorno del estudiante, que se presentan en su vida de manera inesperada o no planificada, y que provienen directamente de su círculo personal (familiares, amigos cercanos, entre otros). Estas influencias pueden afectar directamente su rendimiento académico.
 
 ### Teorías
 
-#### Teoría de la Frustración
+#### Teoría de la frustración:
 
-Esta teoría es un aporte del investigador Abram Amsel que, según Alejandro Baquero (2007) la Teoría de la Frustración de Abram Amsel expone la elaboración de una hipótesis acerca de la función de la omisión decepcionante de recompensa en circunstancias de recompensa no continua. De acuerdo a esa teoría, en la etapa de adquisición, el sujeto se instruye a prever la recompensa obtenida en el contexto experimental debido a la presencia de claves contextuales que las anuncian. Luego, cuando sorprendentemente se omite la recompensa, el sujeto provoca una reacción emocional natural y aversiva denominada frustración que en la actualidad es precedida por las señales que previamente indicaban una recompensa. Esto genera un enfrentamiento al inicio del entrenamiento debido a que tanto la frustración como la recompensa son pronosticados por condicionamiento clásico debido a los mismos estímulos condicionados. A medida que avanza el entrenamiento, por efecto de un contracondicionamiento, el conflicto se resuelve a favor de contestar ya que el refuerzo no es predecible en una situación habitual de refuerzo incompleto, dado que en pruebas donde hay elementos que indican la falta de un refuerzo, se fortalece la respuesta instrumental. De esta manera, la respuesta continúa al introducir la extinción puesto que se ha condicionado a la previsión de falta de recompensa. Por otro lado, en los sujetos que reciben refuerzo constante, no existe nada que los estimule a contestar sin recibir recompensa.
+Esta teoría es un aporte del investigador Abram Amsel. Según Alejandro Baquero (2007), la Teoría de la Frustración de Amsel expone una hipótesis acerca de la función de la omisión decepcionante de una recompensa en circunstancias de refuerzo no continuo.
 
-## **Teoría de los Factores Múltiples**
+De acuerdo con esta teoría, en la etapa de adquisición, el sujeto aprende a prever la recompensa obtenida en el contexto experimental debido a la presencia de claves contextuales que la anuncian. Luego, cuando la recompensa se omite inesperadamente, el sujeto experimenta una reacción emocional natural y aversiva denominada **frustración**, la cual llega a asociarse con las señales que previamente indicaban una recompensa.
 
-La teoría de factores múltiples mantiene que la deserción escolar tiene varios factores, como, individual, sociales y académico. Basándonos en la base da datos que amos a trabajar, uno de estos factores son el desempeño académico, el nivel de educación, el facto de la familia, esto puede aumentar el riesgo de que un alumno abandone la universidad.
+Esto genera un conflicto al inicio del entrenamiento, ya que tanto la frustración como la recompensa son pronosticadas por condicionamiento clásico ante los mismos estímulos. A medida que avanza el entrenamiento, por efecto del contracondicionamiento, el conflicto se resuelve a favor de la respuesta, ya que el refuerzo no es predecible en una situación de refuerzo incompleto. De esta forma, la respuesta continúa incluso durante la extinción, puesto que se ha condicionado la expectativa de ausencia de recompensa. En cambio, los sujetos que reciben refuerzo constante no desarrollan este tipo de respuesta al no experimentar la frustración asociada a la omisión del refuerzo.
 
-La deserción no se ve afectada por un único factor, generalmente se ven afectados por una interacción múltiple de factores y en ocasiones no se logran captar estas razones. Es importante detectar la deserción académica a tiempo para poder ayudar al estudiante con tutorías, apoyo económico y programas de acompañamiento psicológico, las cueles pueden ayudar  para que el estudiante no deserte. Además de identificar estos factores o cuál factor tiene más peso para la deserción del estudiante.
+## **Teoría de los factores múltiples**
 
-## **Teoría de los Factores Económicos y Apoyo Familiar en la Deserción Universitaria**
+La teoría de los factores múltiples sostiene que la deserción escolar responde a una combinación de factores individuales, sociales y académicos.
 
-Esta teoría viene de varios documentos, en el cual se menciona que las dificultades económicas relacionadas con la estabilidad familia o individual, llegan a tener un impacto importante en los estudiantes haciendo que la probabilidad de que un estudiante esté en peligro de abandono de la universidad sea mayor. Cuando se tiene problemas económicos tanto individuales como en el grupo familiar, esto llega a significar una gran presión a los estudiantes, haciendo que traten de apoyar a sus familiares, generando que dejen de lado la universidad.
+Basándonos en la base de datos con la que se trabajará, algunos de estos factores son el desempeño académico, el nivel educativo y los factores familiares, los cuales pueden aumentar el riesgo de que un alumno abandone la institución educativa.
 
-Para llegar a liberar presión sobre los estudiantes, el acceso a becas y ayudas financieras se identifican como un factor que ayuda a los estudiantes para evitar que estén en peligro de abandonar la universidad, dándoles un respiro y apoyo, teniendo un impacto en el rendimiento.
+La deserción no se ve afectada por un único factor; generalmente se debe a la interacción de múltiples elementos y, en ocasiones, es difícil identificar todas las causas. Es fundamental detectar la deserción académica a tiempo para poder brindar apoyo mediante tutorías, asistencia económica y programas de acompañamiento psicológico, los cuales pueden ayudar a prevenir el abandono. Además, es importante identificar qué factores tienen mayor peso en la decisión de desertar.
+
+## **Teoría de los factores económicos y apoyo familiar en la deserción universitaria**
+
+Esta teoría, sustentada en diversos estudios, señala que las dificultades económicas, tanto familiares como individuales, tienen un impacto significativo en los estudiantes, aumentando la probabilidad de abandono universitario.
+
+Los problemas económicos generan una gran presión sobre los estudiantes, quienes en muchos casos deben colaborar con el sustento familiar, lo que puede llevarlos a dejar de lado sus estudios.
+
+Para aliviar esta presión, el acceso a becas y ayudas financieras se identifica como un factor protector, ya que brinda apoyo económico y emocional, permitiendo que los estudiantes continúen su formación y mejoren su rendimiento académico.
 
 #### Bibliografía
 
-<https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf>
+Miranda, J., & Vázquez, J. (2023). *Análisis de la deserción estudiantil universitaria desde una perspectiva analítica*. Revista N° 24, Facultad de Economía y Negocios. Recuperado de [https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf](https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf?utm_source=chatgpt.com)
 
-<http://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007>
+Poveda Velasco, I. M. (2019). *Los factores que influyen sobre la deserción universitaria: Estudio en la UMRPSFXCh* \[Investigación y Negocios, 12(20), 63–80\]. Investigación y Negocios. [https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007](https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007&utm_source=chatgpt.com)
 
-<https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S2215-34702021000100019>
+\[Autor(es)\]. (2021). *Título del artículo*. Revista de Educación (o nombre completo), volumen (número), páginas. Recuperado de <https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S2215-34702021000100019>
 
-<http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-93042023000301206#B56>
+\[Autor(es)\]. (2023). *Título del artículo*. Revista (o nombre de la revista), volumen (número), páginas. Recuperado de <http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-93042023000301206#B56>
 
-<https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf>
+\[Autor(es)\]. (2014). *Título del artículo*. Revista (o nombre de la revista), volumen (número), páginas. Recuperado de <http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S2145-94442014000200010>
 
-<http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S2145-94442014000200010>
+\[Autor(es)\]. (Año). *Título del artículo*. Revista Revie, volumen (número), páginas. Recuperado de <https://revie.gob.do/index.php/revie/article/view/193/365>
 
-<https://revie.gob.do/index.php/revie/article/view/193/365>
+\[Autor(es)\]. (Año). *Título del artículo*. Revista RIDE, volumen (número), páginas. Recuperado de <https://www.ride.org.mx/index.php/RIDE/article/view/1923/5020>
 
-<https://www.ride.org.mx/index.php/RIDE/article/view/1923/5020>
-
-Dzay Chulim, F., Narváez Trejo, O. M., Universidad de Quintana Roo, & Universidad Veracruzana. (2012). *La deserción escolar desde la perspectiva estudiantil* \[Book\]. La Editorial Manda. https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf
+Dzay Chulim, F., & Narváez Trejo, O. M. (2012). *La deserción escolar desde la perspectiva estudiantil*. La Editorial Manda. [https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf](https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf?utm_source=chatgpt.com)
 
 # Bitácora 2
 
 ## Datos
 
-#### Caracteristicas de la tabla:
+#### Características de la tabla:
 
-Esta base de datos contiene registros de 4424 estudiantes, quienes serán clasificados de distintas maneras, desde estado civil hasta los cursos que están cursando, entre otros. La base de datos fue publicada en 2021 y presenta diversos factores, incluyendo variables relacionadas con los padres, para analizar si influyen en la vida académica del estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins, Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico de Portalegre en Portugal, y descargada desde el enlace [link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success). Los datos corresponden al segundo semestre, aunque no se especifica el año.
+Esta base de datos contiene registros de 4,424 estudiantes, quienes serán clasificados de distintas maneras, desde su estado civil hasta los cursos que están cursando, entre otros. La base de datos fue publicada en 2021 y presenta diversos factores, incluyendo variables relacionadas con los padres, para analizar si influyen en la vida académica del estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins, Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico de Portalegre en Portugal, y puede ser descargada desde el enlace [link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success). Los datos corresponden al segundo semestre, aunque no se especifica el año.
 
-Las variables están distribuidas en distintas categorías: variables relacionadas con la trayectoria académica, variables demográficas y variables socioeconómicas. Los tipos de datos incluyen variables reales, categóricas y enteras.
+Las variables están organizadas en distintas categorías: variables relacionadas con la trayectoria académica, variables demográficas y variables socioeconómicas. Los tipos de datos incluyen variables continuas, categóricas y enteras.
 
-#### Poblacion de estudio:
+#### Población de estudio:
 
-Estudiantes matriculados en diferentes carreras de pregrado de una institucion de educacion superior.
+Estudiantes matriculados en diferentes carreras de pregrado de una institución de educación superior.
 
 #### Muestra observada:
 
@@ -122,7 +133,7 @@ Cada uno de los 4,424 estudiantes de educación superior durante determinados se
 
 Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
 
-## Primeas 5 filas de la tabla de datos:
+## Primeras 5 filas de la tabla de datos:
 
 ```{r}
 library(dplyr)
@@ -131,7 +142,7 @@ datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALS
 head(datos, 5)
 ```
 
-La tabla se encuentra en formato tabular, esto se puede ver y tambien se comenta en la pagina de descarga
+La tabla se encuentra en formato tabular, esto se puede ver y también se comenta en la página de descarga
 
 ## Resumen de 5 números de las variables cuantitativas y analizar el mismo:
 
@@ -151,7 +162,7 @@ print(resumen_5_numeros)
 
 ```
 
-La tabla muestra el resumen de 5 numeros de las variables cuantitativas de nuentra base de datos. en la tabla se puede ver que la mayoria de las variables tienen un minimo de en 0, la forma en la que se evualua nuestra variables es de una manera difereente ya que estas van con diferentes rangos par asignarles puede que sea continio o que se llegue a saltar numeros, pasa de 33 o 53 y cosas así.
+La tabla muestra el resumen de cinco números de las variables cuantitativas de nuestra base de datos. En ella se puede observar que la mayoría de las variables tienen un valor mínimo de 0. La forma en que se evalúan nuestras variables es diferente, ya que cada una tiene rangos distintos para su asignación; por lo tanto, pueden ser continuas o presentar saltos en los valores, como pasar de 33 a 53, entre otros.
 
 ## Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas:
 
@@ -185,7 +196,7 @@ grafico_internacional_genero <- function(datos, genero, internacional, pais) {
     geom_text(aes(label = Frecuencia),
               position = position_dodge(width = 0.7),
               vjust = -0.3, size = 3.5) +
-    scale_fill_manual(values = c("steelblue", "darkorange")) +
+    scale_fill_manual(values = c("#BA6F14", "#FF0000")) +
     labs(
       title = "Distribución de Internacionales y Nacionales por Género",
       x = "Lugar de Procedencia",
@@ -216,7 +227,7 @@ gráfico_necesidad_genero <- function(df, genero, needs){
     geom_text(aes(label = Frecuencia),
     position = position_dodge(width = 0.7),
     vjust = -0.3, size = 3.5) +
-    scale_fill_manual(values = c("steelblue", "darkorange")) +
+    scale_fill_manual(values = c("#1250C4", "#8F0FD6")) +
     labs(
       title = "Distribución de Necesidades Educativas Especiales por Género",
       x = "Condición",
@@ -313,8 +324,12 @@ Regresión: Son métodos que consisten en modelar la relación de una variable d
 
 #### Bibliografía:
 
-<https://www.maximaformacion.es/blog-dat/como-describir-tus-datos-en-r-paso-1/>
+Rosas, J. F. M. (2009). *Métodos de imputación para el tratamiento de datos faltantes*. Revista de Métodos Cuantitativos para la Economía y la Empresa. Recuperado de [https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
 
-<https://rpubs.com/Elyn1017/Aunivariado_Vcuantitativas_CasoMedicos>
+Medina, F., & Galván, M. (2007). *Imputación de datos: Teoría y práctica*. Serie Estudios Estadísticos y Prospectivos, N.º 54. Santiago de Chile: ONU-CEPAL. <https://repositorio.cepal.org/server/api/core/bitstreams/02dd479f-fae2-43c4-b5ec-5419fa7f6190/content>
 
-<https://www.uca.edu.sv/mpe/wp-content/uploads/2020/09/61.-Hernandez-W-y-Montano-Y.-2020-Analisis-de-la-desercion-escolar.pdf>
+Rosas, J. F. M., & Álvarez Verdejo, E. (2009). *Métodos de imputación para el tratamiento de datos faltantes: Aplicación mediante R/S-PLUS*. Revista de Métodos Cuantitativos para la Economía y la Empresa, (07), 03-30. [https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
+
+Cousineau, D. (2010). *Outliers detection and treatment: A review*. International Journal of Psychological Research, 3(1), 58-67. [https://www.redalyc.org/pdf/2990/299023509004.pdf](https://www.redalyc.org/pdf/2990/299023509004.pdf?utm_source=chatgpt.com)
+
+Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
