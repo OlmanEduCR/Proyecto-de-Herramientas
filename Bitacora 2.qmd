@@ -333,3 +333,6 @@ Rosas, J. F. M., & Álvarez Verdejo, E. (2009). *Métodos de imputación para el
 Cousineau, D. (2010). *Outliers detection and treatment: A review*. International Journal of Psychological Research, 3(1), 58-67. [https://www.redalyc.org/pdf/2990/299023509004.pdf](https://www.redalyc.org/pdf/2990/299023509004.pdf?utm_source=chatgpt.com)
 
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
+
+
+# Bitácora 3
