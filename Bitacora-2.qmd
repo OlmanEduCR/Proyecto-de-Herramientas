@@ -334,4 +334,3 @@ Cousineau, D. (2010). *Outliers detection and treatment: A review*. Internationa
 
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-# Bitácora 3
