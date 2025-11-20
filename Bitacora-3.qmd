@@ -139,6 +139,8 @@ Las variables de estudio incluyen información sobre la trayectoria académica, 
 library(dplyr)
 library(ggplot2)
 datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+datos <- datos %>%
+  select(-GDP) ### El uso de esta variable es irrelevante
 head(datos, 5)
 ```
 
@@ -335,5 +337,127 @@ Cousineau, D. (2010). *Outliers detection and treatment: A review*. Internationa
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
 # Bitácora 3
+
+Este apartado es para los tipos de variables
+
+```{r}
+datos_num <- datos %>%
+  select(
+    Previous.qualification..grade.,
+    Application.order,
+    Admission.grade,
+    Age.at.enrollment,
+    Curricular.units.1st.sem..credited.,
+    Curricular.units.1st.sem..enrolled.,
+    Curricular.units.1st.sem..approved.,
+    Curricular.units.1st.sem..evaluations.,
+    Curricular.units.1st.sem..grade.,
+    Curricular.units.1st.sem..without.evaluations.,
+    Curricular.units.2nd.sem..credited.,
+    Curricular.units.2nd.sem..enrolled.,
+    Curricular.units.2nd.sem..evaluations.,
+    Curricular.units.2nd.sem..approved.,
+    Curricular.units.2nd.sem..grade.,
+    Curricular.units.2nd.sem..without.evaluations.,
+    Unemployment.rate,
+    Inflation.rate
+  )
+
+tabla_num <- data.frame(
+  Variables_Numericas = names(datos_num)
+)
+
+tabla_num
+
+datos_cat <- datos %>%
+  select(
+    Marital.status,
+    Application.mode,
+    Course,
+    Daytime.evening.attendance.,
+    Previous.qualification,
+    Nacionality,
+    Mother.s.qualification,
+    Father.s.qualification,
+    Mother.s.occupation,
+    Father.s.occupation,
+    Displaced,
+    Educational.special.needs,
+    Debtor,
+    Tuition.fees.up.to.date,
+    Gender,
+    Scholarship.holder,
+    Age.at.enrollment,
+    International,
+    Target
+  )
+
+tabla_cat <- data.frame(
+  Variables_Categoricas = names(datos_cat)
+)
+
+tabla_cat
+```
+
+```{r}
+# 4.1 Distribución de la variable objetivo
+datos %>%
+  ggplot(aes(x = Target)) +
+  geom_bar(aes(y = after_stat(count/sum(count)), fill = Target)) +
+  geom_text(
+    aes(
+      y = after_stat(count/sum(count)),
+      label = paste0(round(after_stat(count/sum(count))*100, 1), "%")
+    ),
+    stat = "count",
+    vjust = -0.5,
+    size = 4
+  ) +
+  scale_fill_manual(values = c("steelblue", "firebrick", "darkgreen")) +
+  labs(title = "Distribución de Deserción Escolar",
+       x = "Estado del Estudiante",
+       y = "Proporción")
+
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(Target,
+                    levels = c("Graduate", "Enrolled", "Dropout"),
+                    labels = c("No Desertor", "No Desertor", "Desertor"))
+  ) %>%
+  # Agrupar para proporciones
+  group_by(Gender, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Gender) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = factor(Gender), y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  
+  scale_y_continuous(labels = scales::percent) +
+  
+  labs(
+    title = "Distribución de Deserción por Género",
+    x = "Género (1 = Mujer, 0 = Hombre)",
+    y = "Proporción",
+    fill = "Estado"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
+    legend.position = "top"
+  )
+```
 
 
