@@ -334,6 +334,103 @@ Cousineau, D. (2010). *Outliers detection and treatment: A review*. Internationa
 
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-# Bitácora 3
 
+
+===============================================================================================================
+# Bitácora 3
+===============================================================================================================
+1. Técnicas o Métodos Estadísticos Seleccionados
+
+Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
+
+Análisis Exploratorio de Datos (EDA): Para comprender la distribución y relaciones básicas entre variables.
+
+Regresión Logística Binaria: Para modelar la probabilidad de deserción en función de factores individuales, sociales y académicos.
+
+Análisis de Componentes Principales (PCA): Para reducir dimensionalidad e identificar patrones subyacentes.
+
+Matriz de Correlación: Para identificar relaciones lineales entre variables predictoras y la variable objetivo.
+
+
+
+2. Marco Metodológico
+Regresión Logística Binaria
+La regresión logística modela la probabilidad de que un evento ocurra (en este caso, deserción) mediante la función logística:
+
+P(Y=1/X)=1/(1+e^−(β_0+β_1*X_1+⋯+β_p*X_p))
+Donde:
+
+Y es la variable dependiente binaria (Dropout vs Graduate/Enrolled)
+
+X_1,…,X_p son las variables predictoras
+β_0,…,β_p  son los coeficientes a estimar
+La estimación se realiza mediante máxima verosimilitud, maximizando la función:
+ℓ(β)=∑(i=1 hasta n) [y_i*log(p_i)+(1−y_i)*log(1−p_i)]
+Análisis de Componentes Principales (PCA)
+El PCA transforma las variables originales en componentes ortogonales que maximizan la varianza en donde W es la matriz de autovectores de la matriz de covarianza de X
+
+
+3- Aplique dichas técnicas o métodos. Presente los resultados, analícelos y responda su pregunta de investigación.
+
+Estadística descriptiva
+
+```{r}
+columnas_seleccionadas <- datos[, c(
+                                  "Admission.grade", 
+                                  "Age.at.enrollment",
+                                  "Previous.qualification..grade.",
+                                  "Curricular.units.1st.sem..grade.", 
+                                  "Curricular.units.2nd.sem..grade." 
+                                   )]
+#pasa r chr a num y pasar int a num
+columnas_seleccionadas <- as.data.frame(lapply(columnas_seleccionadas, function(x) {
+  if(is.character(x)) {
+    # Convertir a numérico (maneja decimales)
+    return(as.numeric(as.character(x)))
+  } else {
+    return(x)
+  }
+}))
+str(columnas_seleccionadas)
+
+```
+
+```{r}
+calcular_moda <- function(x){
+  x <- x[!is.na(x)]
+  if(length(x) == 0) return(NA)
+  
+  tabla <- table(x)
+  moda <- as.numeric((names(tabla)[tabla == max(tabla)]))
+  return(moda[1])
+}
+```
+
+```{r}
+estadisticas_descrip <- data.frame(
+  Variable = c("Nota de Admisión", "Edad", "Calificación Previa", "Nota 1er Semestre", "Nota 2do Semestre"),
+  Media = sapply(columnas_seleccionadas, mean, na.rm = TRUE),
+  Mediana = sapply(columnas_seleccionadas, median, na.rm = TRUE),
+  Moda = sapply(columnas_seleccionadas, calcular_moda),
+  Desviacion_Estandar = sapply(columnas_seleccionadas, sd, na.rm = TRUE),
+  Minimo = sapply(columnas_seleccionadas, min, na.rm = TRUE),
+  Maximo = sapply(columnas_seleccionadas, max, na.rm = TRUE),
+  Rango = sapply(columnas_seleccionadas, function(x) diff(range(x, na.rm = TRUE))),
+  Cantida_NA = sapply(columnas_seleccionadas, function(x) sum(is.na(x)))
+)
+print(estadisticas_descrip)
+```
+
+```{r}
+par(mfrow = c(2, 4))  
+
+for(i in 1:ncol(columnas_seleccionadas)) {
+  hist(columnas_seleccionadas[[i]], 
+       main = estadisticas_descrip$Variable[i],
+       xlab = "Valor",
+       ylab = "Frecuencia",
+       col = "lightblue",
+       border = "black")
+}
+```
 
