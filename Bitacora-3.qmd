@@ -138,6 +138,7 @@ Las variables de estudio incluyen información sobre la trayectoria académica, 
 ```{r}
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
 datos <- datos %>%
   select(-GDP) ### El uso de esta variable es irrelevante
@@ -405,19 +406,19 @@ calcular_moda <- function(x){
   moda <- as.numeric((names(tabla)[tabla == max(tabla)]))
   return(moda[1])
 }
+
+calcular_moda()
 ```
 
 ```{r}
 estadisticas_descrip <- data.frame(
-  Variable = c("Nota de Admisión", "Edad", "Calificación Previa", "Nota 1er Semestre", "Nota 2do Semestre"),
   Media = sapply(columnas_seleccionadas, mean, na.rm = TRUE),
   Mediana = sapply(columnas_seleccionadas, median, na.rm = TRUE),
   Moda = sapply(columnas_seleccionadas, calcular_moda),
   Desviacion_Estandar = sapply(columnas_seleccionadas, sd, na.rm = TRUE),
   Minimo = sapply(columnas_seleccionadas, min, na.rm = TRUE),
   Maximo = sapply(columnas_seleccionadas, max, na.rm = TRUE),
-  Rango = sapply(columnas_seleccionadas, function(x) diff(range(x, na.rm = TRUE))),
-  Cantida_NA = sapply(columnas_seleccionadas, function(x) sum(is.na(x)))
+  Rango = sapply(columnas_seleccionadas, function(x) diff(range(x, na.rm = TRUE)))
 )
 print(estadisticas_descrip)
 ```
@@ -425,9 +426,12 @@ print(estadisticas_descrip)
 ```{r}
 par(mfrow = c(2, 4))  
 
+nombres_var <- names(columnas_seleccionadas)
+
 for(i in 1:ncol(columnas_seleccionadas)) {
   hist(columnas_seleccionadas[[i]], 
-       main = estadisticas_descrip$Variable[i],
+       main = nombres_var[i],
+       cex.main = 0.9, 
        xlab = "Valor",
        ylab = "Frecuencia",
        col = "lightblue",
@@ -456,8 +460,6 @@ datos_num <- datos %>%
     Curricular.units.2nd.sem..approved.,
     Curricular.units.2nd.sem..grade.,
     Curricular.units.2nd.sem..without.evaluations.,
-    Unemployment.rate,
-    Inflation.rate
   )
 
 tabla_num <- data.frame(
@@ -484,7 +486,6 @@ datos_cat <- datos %>%
     Tuition.fees.up.to.date,
     Gender,
     Scholarship.holder,
-    Age.at.enrollment,
     International,
     Target
   )
@@ -496,25 +497,62 @@ tabla_cat <- data.frame(
 tabla_cat
 ```
 
+Aplicando Regresión Logística
 ```{r}
-# 4.1 Distribución de la variable objetivo
+
+### Pasamos los casos de Desertor y Matriculado/Graduado a 1,0 respectivamente
+datos$Target_bin <- ifelse(datos$Target == "Dropout", 1, 0)
+datos$Target_bin <- factor(datos$Target_bin, levels = c(0, 1))
+
+modelo <- glm(Target_bin ~ Age.at.enrollment + 
+                Curricular.units.1st.sem..enrolled. + 
+                Curricular.units.1st.sem..approved. + 
+                Curricular.units.2nd.sem..enrolled. + 
+                Curricular.units.2nd.sem..approved. + 
+                Marital.status + 
+                Course + 
+                Displaced + 
+                Educational.special.needs + 
+                Debtor + 
+                Tuition.fees.up.to.date + 
+                Gender + 
+                Scholarship.holder, data = datos, family = binomial)
+
+summary(modelo)
+
+
+
+```
+
+```{r}
 datos %>%
-  ggplot(aes(x = Target)) +
-  geom_bar(aes(y = after_stat(count/sum(count)), fill = Target)) +
+  mutate(
+    Target = factor(
+      Target,
+      levels = c("Graduate", "Enrolled", "Dropout"),
+      labels = c("No Desertor", "No Desertor", "Desertor")
+    )
+  ) %>%
+  ggplot(aes(x = Target, fill = Target)) +
+  geom_bar(aes(y = after_stat(count / sum(count)))) +
   geom_text(
     aes(
-      y = after_stat(count/sum(count)),
-      label = paste0(round(after_stat(count/sum(count))*100, 1), "%")
+      y = after_stat(count / sum(count)),
+      label = paste0(round(after_stat(count / sum(count)) * 100, 1), "%")
     ),
     stat = "count",
     vjust = -0.5,
     size = 4
   ) +
-  scale_fill_manual(values = c("steelblue", "firebrick", "darkgreen")) +
-  labs(title = "Distribución de Deserción Escolar",
-       x = "Estado del Estudiante",
-       y = "Proporción")
-
+  scale_fill_manual(
+    values = c("No Desertor" = "steelblue",
+               "Desertor"    = "firebrick")
+  ) +
+  labs(
+    title = "Distribución de Deserción Escolar",
+    x = "Estado del Estudiante",
+    y = "Proporción"
+  ) 
 ```
 
 ```{r}
@@ -546,15 +584,113 @@ datos %>%
   
   labs(
     title = "Distribución de Deserción por Género",
-    x = "Género (1 = Mujer, 0 = Hombre)",
+    x = "Género (0 = Mujer, 1 = Hombre)",
     y = "Proporción",
     fill = "Estado"
-  ) +
-  theme_minimal(base_size = 13) +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),
-    legend.position = "top"
   )
 ```
 
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(
+      Target,
+      levels = c("Graduate", "Enrolled", "Dropout"),
+      labels = c("No Desertor", "No Desertor", "Desertor")
+    )
+  ) %>%
+  count(Age.at.enrollment, Target) %>%
+  group_by(Age.at.enrollment) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = Age.at.enrollment, y = prop, color = Target)) +
+  geom_line(size = 1.3, alpha = 0.9) +
+  geom_point(size = 3) +
+  scale_color_manual(
+    values = c("No Desertor" = "steelblue",
+               "Desertor"    = "firebrick")
+  ) +
+  scale_y_continuous(labels = scales::percent_format()) +
+  labs(
+    title = "Proporción de Deserción según la Edad de Ingreso",
+    x = "Edad al momento de ingreso",
+    y = "Proporción",
+    color = "Estado"
+  )
+```
+
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(
+      Target,
+      levels = c("Graduate", "Enrolled", "Dropout"),
+      labels = c("No desertor", "No desertor", "Desertor")
+    )
+  ) %>%
+  select(
+    Target,
+    Matriculados = Curricular.units.1st.sem..enrolled.,
+    Aprobados = Curricular.units.1st.sem..approved.
+  ) %>%
+  pivot_longer(
+    cols = c(Matriculados, Aprobados),
+    names_to = "Variable",
+    values_to = "Valor"
+  ) %>%
+  
+  ggplot(aes(x = Target, y = Valor, fill = Variable)) +
+  geom_boxplot(alpha = 0.75, width = 0.7, outlier.size = 1.5) +
+  
+  scale_fill_manual(
+    values = c("Matriculados" = "steelblue",
+               "Aprobados" = "firebrick")
+  ) +
+  
+  labs(
+    title = "Distribución de Créditos Matriculados y Aprobados en el 1er Semestre según Estado Académico",
+    x = "Estado académico",
+    y = "Número de créditos",
+    fill = ""
+  )
+```
+
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(
+      Target,
+      levels = c("Graduate", "Enrolled", "Dropout"),
+      labels = c("No desertor", "No desertor", "Desertor")
+    )
+  ) %>%
+  select(
+    Target,
+    Matriculados = Curricular.units.2nd.sem..enrolled.,
+    Aprobados = Curricular.units.2nd.sem..approved.
+  ) %>%
+  pivot_longer(
+    cols = c(Matriculados, Aprobados),
+    names_to = "Variable",
+    values_to = "Valor"
+  ) %>%
+  
+  ggplot(aes(x = Target, y = Valor, fill = Variable)) +
+  geom_boxplot(alpha = 0.75, width = 0.7, outlier.size = 1.5) +
+  
+  scale_fill_manual(
+    values = c("Matriculados" = "steelblue",
+               "Aprobados" = "firebrick")
+  ) +
+  
+  labs(
+    title = "Distribución de Créditos Matriculados y Aprobados en el 2do Semestre según Estado Académico",
+    x = "Estado académico",
+    y = "Número de créditos",
+    fill = ""
+  )
+```
 
