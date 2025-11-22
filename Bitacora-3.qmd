@@ -1,12 +1,11 @@
 ---
 title: "BITÁCORA 3 - GRUPO 2"
 author: |
-  **Integrantes:**
   
+  **Integrantes:**
   - Cristhian Jimenez Campos — C33973 
   - Olman Camacho Jerez — C31523  
   - Jose Manuel Alfaro Monge — C30244
-
 format:
   pdf:
     toc: false
@@ -24,6 +23,9 @@ execute:
   echo: true
   warning: false
   message: false
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
 ## Integrantes
@@ -38,74 +40,145 @@ execute:
 
 ### Pregunta de investigación
 
-¿Cuáles son los factores individuales, sociales y académicos que más inciden en la predicción de la deserción escolar en estudiantes de nivel secundario?
+¿Cuáles son los factores individuales, sociales y académicos que más
+inciden en la predicción de la deserción escolar en estudiantes de nivel
+secundario?
 
 ### Objeto de estudio
 
-El objeto de estudio es el fenómeno de la deserción escolar, entendido como el abandono prematuro del sistema educativo formal por parte de los estudiantes antes de completar el nivel educativo correspondiente.
+El objeto de estudio es el fenómeno de la deserción escolar, entendido
+como el abandono prematuro del sistema educativo formal por parte de los
+estudiantes antes de completar el nivel educativo correspondiente.
 
 ### Conceptos
 
 #### Deserción escolar:
 
-Según Spady, citado por Floricely Dzay Chulim (2012), se mencionan dos definiciones operacionales acerca de la deserción universitaria:
+Según Spady, citado por Floricely Dzay Chulim (2012), se mencionan dos
+definiciones operacionales acerca de la deserción universitaria:
 
-a)  Incluye a cualquier persona que abandona la institución de educación superior donde se encuentra registrada.\
-b)  Se refiere a aquellas personas que no reciben un título o grado de ninguna universidad.
+a)  Incluye a cualquier persona que abandona la institución de educación
+    superior donde se encuentra registrada.\
+b)  Se refiere a aquellas personas que no reciben un título o grado de
+    ninguna universidad.
 
-Esta segunda definición sostiene que el o la estudiante que haya iniciado un proceso de aprendizaje superior y, en un determinado periodo de tiempo, no haya obtenido su respectivo título o grado, puede considerarse un desertor.
+Esta segunda definición sostiene que el o la estudiante que haya
+iniciado un proceso de aprendizaje superior y, en un determinado periodo
+de tiempo, no haya obtenido su respectivo título o grado, puede
+considerarse un desertor.
 
 #### Factores personales:
 
-Se entienden como factores personales todas aquellas características internas del estudiante, como la motivación, las actitudes y las habilidades cognitivas, que influyen directamente en su aprendizaje.
+Se entienden como factores personales todas aquellas características
+internas del estudiante, como la motivación, las actitudes y las
+habilidades cognitivas, que influyen directamente en su aprendizaje.
 
 #### Factores sociales:
 
-Los factores sociales se refieren a todas aquellas influencias externas relacionadas con el entorno del estudiante, que se presentan en su vida de manera inesperada o no planificada, y que provienen directamente de su círculo personal (familiares, amigos cercanos, entre otros). Estas influencias pueden afectar directamente su rendimiento académico.
+Los factores sociales se refieren a todas aquellas influencias externas
+relacionadas con el entorno del estudiante, que se presentan en su vida
+de manera inesperada o no planificada, y que provienen directamente de
+su círculo personal (familiares, amigos cercanos, entre otros). Estas
+influencias pueden afectar directamente su rendimiento académico.
 
 ### Teorías
 
 #### Teoría de la frustración:
 
-Esta teoría es un aporte del investigador Abram Amsel. Según Alejandro Baquero (2007), la Teoría de la Frustración de Amsel expone una hipótesis acerca de la función de la omisión decepcionante de una recompensa en circunstancias de refuerzo no continuo.
+Esta teoría es un aporte del investigador Abram Amsel. Según Alejandro
+Baquero (2007), la Teoría de la Frustración de Amsel expone una
+hipótesis acerca de la función de la omisión decepcionante de una
+recompensa en circunstancias de refuerzo no continuo.
 
-De acuerdo con esta teoría, en la etapa de adquisición, el sujeto aprende a prever la recompensa obtenida en el contexto experimental debido a la presencia de claves contextuales que la anuncian. Luego, cuando la recompensa se omite inesperadamente, el sujeto experimenta una reacción emocional natural y aversiva denominada **frustración**, la cual llega a asociarse con las señales que previamente indicaban una recompensa.
+De acuerdo con esta teoría, en la etapa de adquisición, el sujeto
+aprende a prever la recompensa obtenida en el contexto experimental
+debido a la presencia de claves contextuales que la anuncian. Luego,
+cuando la recompensa se omite inesperadamente, el sujeto experimenta una
+reacción emocional natural y aversiva denominada **frustración**, la
+cual llega a asociarse con las señales que previamente indicaban una
+recompensa.
 
-Esto genera un conflicto al inicio del entrenamiento, ya que tanto la frustración como la recompensa son pronosticadas por condicionamiento clásico ante los mismos estímulos. A medida que avanza el entrenamiento, por efecto del contracondicionamiento, el conflicto se resuelve a favor de la respuesta, ya que el refuerzo no es predecible en una situación de refuerzo incompleto. De esta forma, la respuesta continúa incluso durante la extinción, puesto que se ha condicionado la expectativa de ausencia de recompensa. En cambio, los sujetos que reciben refuerzo constante no desarrollan este tipo de respuesta al no experimentar la frustración asociada a la omisión del refuerzo.
+Esto genera un conflicto al inicio del entrenamiento, ya que tanto la
+frustración como la recompensa son pronosticadas por condicionamiento
+clásico ante los mismos estímulos. A medida que avanza el entrenamiento,
+por efecto del contracondicionamiento, el conflicto se resuelve a favor
+de la respuesta, ya que el refuerzo no es predecible en una situación de
+refuerzo incompleto. De esta forma, la respuesta continúa incluso
+durante la extinción, puesto que se ha condicionado la expectativa de
+ausencia de recompensa. En cambio, los sujetos que reciben refuerzo
+constante no desarrollan este tipo de respuesta al no experimentar la
+frustración asociada a la omisión del refuerzo.
 
 ## **Teoría de los factores múltiples**
 
-La teoría de los factores múltiples sostiene que la deserción escolar responde a una combinación de factores individuales, sociales y académicos.
+La teoría de los factores múltiples sostiene que la deserción escolar
+responde a una combinación de factores individuales, sociales y
+académicos.
 
-Basándonos en la base de datos con la que se trabajará, algunos de estos factores son el desempeño académico, el nivel educativo y los factores familiares, los cuales pueden aumentar el riesgo de que un alumno abandone la institución educativa.
+Basándonos en la base de datos con la que se trabajará, algunos de estos
+factores son el desempeño académico, el nivel educativo y los factores
+familiares, los cuales pueden aumentar el riesgo de que un alumno
+abandone la institución educativa.
 
-La deserción no se ve afectada por un único factor; generalmente se debe a la interacción de múltiples elementos y, en ocasiones, es difícil identificar todas las causas. Es fundamental detectar la deserción académica a tiempo para poder brindar apoyo mediante tutorías, asistencia económica y programas de acompañamiento psicológico, los cuales pueden ayudar a prevenir el abandono. Además, es importante identificar qué factores tienen mayor peso en la decisión de desertar.
+La deserción no se ve afectada por un único factor; generalmente se debe
+a la interacción de múltiples elementos y, en ocasiones, es difícil
+identificar todas las causas. Es fundamental detectar la deserción
+académica a tiempo para poder brindar apoyo mediante tutorías,
+asistencia económica y programas de acompañamiento psicológico, los
+cuales pueden ayudar a prevenir el abandono. Además, es importante
+identificar qué factores tienen mayor peso en la decisión de desertar.
 
 ## **Teoría de los factores económicos y apoyo familiar en la deserción universitaria**
 
-Esta teoría, sustentada en diversos estudios, señala que las dificultades económicas, tanto familiares como individuales, tienen un impacto significativo en los estudiantes, aumentando la probabilidad de abandono universitario.
+Esta teoría, sustentada en diversos estudios, señala que las
+dificultades económicas, tanto familiares como individuales, tienen un
+impacto significativo en los estudiantes, aumentando la probabilidad de
+abandono universitario.
 
-Los problemas económicos generan una gran presión sobre los estudiantes, quienes en muchos casos deben colaborar con el sustento familiar, lo que puede llevarlos a dejar de lado sus estudios.
+Los problemas económicos generan una gran presión sobre los estudiantes,
+quienes en muchos casos deben colaborar con el sustento familiar, lo que
+puede llevarlos a dejar de lado sus estudios.
 
-Para aliviar esta presión, el acceso a becas y ayudas financieras se identifica como un factor protector, ya que brinda apoyo económico y emocional, permitiendo que los estudiantes continúen su formación y mejoren su rendimiento académico.
+Para aliviar esta presión, el acceso a becas y ayudas financieras se
+identifica como un factor protector, ya que brinda apoyo económico y
+emocional, permitiendo que los estudiantes continúen su formación y
+mejoren su rendimiento académico.
 
 #### Bibliografía
 
-Miranda, J., & Vázquez, J. (2023). *Análisis de la deserción estudiantil universitaria desde una perspectiva analítica*. Revista N° 24, Facultad de Economía y Negocios. Recuperado de [https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf](https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf?utm_source=chatgpt.com)
+Miranda, J., & Vázquez, J. (2023). *Análisis de la deserción estudiantil
+universitaria desde una perspectiva analítica*. Revista N° 24, Facultad
+de Economía y Negocios. Recuperado de
+[https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf](https://admisionfen.cl/wp-content/uploads/2024/03/Revista-N%C2%B024_jaime_miranda.pdf?utm_source=chatgpt.com)
 
-Poveda Velasco, I. M. (2019). *Los factores que influyen sobre la deserción universitaria: Estudio en la UMRPSFXCh* \[Investigación y Negocios, 12(20), 63–80\]. Investigación y Negocios. [https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007](https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007&utm_source=chatgpt.com)
+Poveda Velasco, I. M. (2019). *Los factores que influyen sobre la
+deserción universitaria: Estudio en la UMRPSFXCh* \[Investigación y
+Negocios, 12(20), 63–80\]. Investigación y Negocios.
+[https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007](https://www.scielo.org.bo/scielo.php?script=sci_arttext&pid=S2521-27372019000200007&utm_source=chatgpt.com)
 
-\[Autor(es)\]. (2021). *Título del artículo*. Revista de Educación (o nombre completo), volumen (número), páginas. Recuperado de <https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S2215-34702021000100019>
+\[Autor(es)\]. (2021). *Título del artículo*. Revista de Educación (o
+nombre completo), volumen (número), páginas. Recuperado de
+<https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S2215-34702021000100019>
 
-\[Autor(es)\]. (2023). *Título del artículo*. Revista (o nombre de la revista), volumen (número), páginas. Recuperado de <http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-93042023000301206#B56>
+\[Autor(es)\]. (2023). *Título del artículo*. Revista (o nombre de la
+revista), volumen (número), páginas. Recuperado de
+<http://www.scielo.edu.uy/scielo.php?script=sci_arttext&pid=S1688-93042023000301206#B56>
 
-\[Autor(es)\]. (2014). *Título del artículo*. Revista (o nombre de la revista), volumen (número), páginas. Recuperado de <http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S2145-94442014000200010>
+\[Autor(es)\]. (2014). *Título del artículo*. Revista (o nombre de la
+revista), volumen (número), páginas. Recuperado de
+<http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S2145-94442014000200010>
 
-\[Autor(es)\]. (Año). *Título del artículo*. Revista Revie, volumen (número), páginas. Recuperado de <https://revie.gob.do/index.php/revie/article/view/193/365>
+\[Autor(es)\]. (Año). *Título del artículo*. Revista Revie, volumen
+(número), páginas. Recuperado de
+<https://revie.gob.do/index.php/revie/article/view/193/365>
 
-\[Autor(es)\]. (Año). *Título del artículo*. Revista RIDE, volumen (número), páginas. Recuperado de <https://www.ride.org.mx/index.php/RIDE/article/view/1923/5020>
+\[Autor(es)\]. (Año). *Título del artículo*. Revista RIDE, volumen
+(número), páginas. Recuperado de
+<https://www.ride.org.mx/index.php/RIDE/article/view/1923/5020>
 
-Dzay Chulim, F., & Narváez Trejo, O. M. (2012). *La deserción escolar desde la perspectiva estudiantil*. La Editorial Manda. [https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf](https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf?utm_source=chatgpt.com)
+Dzay Chulim, F., & Narváez Trejo, O. M. (2012). *La deserción escolar
+desde la perspectiva estudiantil*. La Editorial Manda.
+[https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf](https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf?utm_source=chatgpt.com)
 
 # Bitácora 2
 
@@ -113,13 +186,27 @@ Dzay Chulim, F., & Narváez Trejo, O. M. (2012). *La deserción escolar desde la
 
 #### Características de la tabla:
 
-Esta base de datos contiene registros de 4,424 estudiantes, quienes serán clasificados de distintas maneras, desde su estado civil hasta los cursos que están cursando, entre otros. La base de datos fue publicada en 2021 y presenta diversos factores, incluyendo variables relacionadas con los padres, para analizar si influyen en la vida académica del estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins, Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico de Portalegre en Portugal, y puede ser descargada desde el enlace [link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success). Los datos corresponden al segundo semestre, aunque no se especifica el año.
+Esta base de datos contiene registros de 4,424 estudiantes, quienes
+serán clasificados de distintas maneras, desde su estado civil hasta los
+cursos que están cursando, entre otros. La base de datos fue publicada
+en 2021 y presenta diversos factores, incluyendo variables relacionadas
+con los padres, para analizar si influyen en la vida académica del
+estudiante. Fue creada por Valentim Realinho, Mónica Vieira Martins,
+Jorge Machado y Luís Baptista, investigadores del Instituto Politécnico
+de Portalegre en Portugal, y puede ser descargada desde el enlace
+[link](https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success).
+Los datos corresponden al segundo semestre, aunque no se especifica el
+año.
 
-Las variables están organizadas en distintas categorías: variables relacionadas con la trayectoria académica, variables demográficas y variables socioeconómicas. Los tipos de datos incluyen variables continuas, categóricas y enteras.
+Las variables están organizadas en distintas categorías: variables
+relacionadas con la trayectoria académica, variables demográficas y
+variables socioeconómicas. Los tipos de datos incluyen variables
+continuas, categóricas y enteras.
 
 #### Población de estudio:
 
-Estudiantes matriculados en diferentes carreras de pregrado de una institución de educación superior.
+Estudiantes matriculados en diferentes carreras de pregrado de una
+institución de educación superior.
 
 #### Muestra observada:
 
@@ -127,11 +214,16 @@ Estudiantes matriculados en diferentes carreras de pregrado de una institución 
 
 #### Unidad estadística o individuos:
 
-Cada uno de los 4,424 estudiantes de educación superior durante determinados semestres.
+Cada uno de los 4,424 estudiantes de educación superior durante
+determinados semestres.
 
 #### Identificación de las variables de estudio:
 
-Las variables de estudio incluyen información sobre la trayectoria académica, datos demográficos y factores socioeconómicos de los estudiantes, así como su rendimiento académico al final del primer y segundo semestre. El problema se plantea como una tarea de clasificación en tres categorías: abandono, matriculado y graduado.
+Las variables de estudio incluyen información sobre la trayectoria
+académica, datos demográficos y factores socioeconómicos de los
+estudiantes, así como su rendimiento académico al final del primer y
+segundo semestre. El problema se plantea como una tarea de clasificación
+en tres categorías: abandono, matriculado y graduado.
 
 ## Primeras 5 filas de la tabla de datos:
 
@@ -145,7 +237,8 @@ datos <- datos %>%
 head(datos, 5)
 ```
 
-La tabla se encuentra en formato tabular, esto se puede ver y también se comenta en la página de descarga
+La tabla se encuentra en formato tabular, esto se puede ver y también se
+comenta en la página de descarga
 
 ## Resumen de 5 números de las variables cuantitativas y analizar el mismo:
 
@@ -165,7 +258,12 @@ print(resumen_5_numeros)
 
 ```
 
-La tabla muestra el resumen de cinco números de las variables cuantitativas de nuestra base de datos. En ella se puede observar que la mayoría de las variables tienen un valor mínimo de 0. La forma en que se evalúan nuestras variables es diferente, ya que cada una tiene rangos distintos para su asignación; por lo tanto, pueden ser continuas o presentar saltos en los valores, como pasar de 33 a 53, entre otros.
+La tabla muestra el resumen de cinco números de las variables
+cuantitativas de nuestra base de datos. En ella se puede observar que la
+mayoría de las variables tienen un valor mínimo de 0. La forma en que se
+evalúan nuestras variables es diferente, ya que cada una tiene rangos
+distintos para su asignación; por lo tanto, pueden ser continuas o
+presentar saltos en los valores, como pasar de 33 a 53, entre otros.
 
 ## Hacer al menos un gráfico que describa la distribución para cada una de las variables cuantitativas:
 
@@ -297,73 +395,107 @@ head(outliers)
 
 ```
 
-## Investigar técnicas que permitan subsanar los valores perdidos y outliers:
+## Investigar técnicas que permitan subsanar los valores perdidos y outliers
 
 Manejo de valores faltantes y outliers
 
 Valores faltantes:
 
-Los valores faltantes pueden ser tratados mediante diferentes métodos que modifican los datos de distinta manera. Por eso, a la hora de utilizar estos valores, sus resultados se verán afectados de mayor o menor manera forma dependiendo de la técnica utilizada. Existen técnicas como la eliminación de los datos faltantes, sin embargo, esta práctica puede perjudicar al análisis de los datos, por lo que nos centraremos en los métodos que buscan modificarlos de manera que aporten información. Se pueden utilizar métodos simples como la imputación por la media, mediana o moda, que son métodos fáciles de implementar, sin embargo, estos datos pueden verse distorsionados por la presencia de valores atípicos. Por eso existen métodos más robustos como la imputación por vecinos más cercanos, imputación por regresión, imputación múltiple o por series de tiempo. Estas técnicas conservan de mejor manera la estructura de los datos.
+Los valores faltantes pueden ser tratados mediante diferentes métodos que modifican los datos de distinta manera. Por eso, a la hora de utilizarlos, sus resultados se verán afectados de mayor o menor forma dependiendo de la técnica utilizada. Existen técnicas como la eliminación de los datos faltantes, sin embargo, esta práctica puede perjudicar el análisis de los datos, por lo que nos centraremos en los métodos que buscan modificarlos de manera que aporten información.
+
+Se pueden utilizar métodos simples como la imputación por la media, mediana o moda, que son fáciles de implementar; sin embargo, estos datos pueden verse distorsionados por la presencia de valores atípicos. Por eso existen métodos más robustos como la imputación por vecinos más cercanos, imputación por regresión, imputación múltiple o imputación por series de tiempo. Estas técnicas conservan de mejor manera la estructura de los datos.
 
 Outliers:
 
-Hay tres opciones posibles a la hora de enfrentar un outlier, tanto univariable como multivariable, estas opciones son eliminarlo, mantenerlo o reemplazarlo. Al igual que en los valores faltantes, se pueden eliminar todos los outliers, pero este método provoca pérdida de información que es normalmente valiosa y aporta a la investigación. También se tiene la opción de utilizar métodos simples como reemplazarlos por la media o moda, aunque el uso de estas técnicas no es recomendado porque pueden generar resultados artificiales y sesgados. Por lo tanto, se recomienda utilizar técnicas más robustas que reduzcan la influencia y no los eliminen por completo.
+Hay tres opciones posibles a la hora de enfrentar un outlier, tanto univariable como multivariable. Estas opciones son eliminarlo, mantenerlo o reemplazarlo. Al igual que con los valores faltantes, se pueden eliminar todos los outliers, pero este método provoca pérdida de información que normalmente es valiosa y aporta a la investigación.
 
-Ahora veremos algunas formas de enfrentar los outliers dependiendo de que sean univariables o multivariables.
+También se tiene la opción de utilizar métodos simples como reemplazarlos por la media o la moda, aunque el uso de estas técnicas no es recomendado porque puede generar resultados artificiales y sesgados. Por lo tanto, se recomienda utilizar técnicas más robustas que reduzcan su influencia sin eliminarlos por completo.
+
+Ahora veremos algunas formas de enfrentar los outliers dependiendo de si son univariables o multivariables.
 
 Outliers univariable
 
-Detectar y clasificar: Se realiza una revisión manual para determinar si son errores, casos aleatorios o datos de interés que se deberían analizar por separado. Luego se decide individualmente qué hacer con cada uno.
+Detectar y clasificar:
+Se realiza una revisión manual para determinar si son errores, casos aleatorios o datos de interés que deberían analizarse por separado. Luego se decide individualmente qué hacer con cada uno.
 
-Winsorización: Se sustituye el dato por el valor del percentil más cercano. Esto conserva la estructura de los datos y limita los efectos sobre las estadísticas principales.
+Winsorización:
+Se sustituye el dato por el valor del percentil más cercano. Esto conserva la estructura de los datos y limita los efectos sobre las estadísticas principales.
 
 Outliers multivariable
 
-Revisión contextual: Se verifica que las variables que se estén comparando no tengan una relación incoherente o anómala que genere valores extraños o fuera de contexto.
+Revisión contextual:
+Se verifica que las variables que se estén comparando no tengan una relación incoherente o anómala que genere valores extraños o fuera de contexto.
 
-Análisis por separado: Se analizan los casos atípicos como un conjunto separado a los datos comunes para identificar patrones y no alterar los datos principales.
+Análisis por separado:
+Se analizan los casos atípicos como un conjunto separado de los datos comunes para identificar patrones sin alterar los datos principales.
 
-Regresión: Son métodos que consisten en modelar la relación de una variable dependiente con otras independientes, para evaluar la influencia de los outliers sobre las relaciones entre variables.
+Regresión:
+Son métodos que consisten en modelar la relación de una variable dependiente con otras independientes, para evaluar la influencia de los outliers sobre las relaciones entre variables.
 
 #### Bibliografía:
 
-Rosas, J. F. M. (2009). *Métodos de imputación para el tratamiento de datos faltantes*. Revista de Métodos Cuantitativos para la Economía y la Empresa. Recuperado de [https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
+Rosas, J. F. M. (2009). *Métodos de imputación para el tratamiento de
+datos faltantes*. Revista de Métodos Cuantitativos para la Economía y la
+Empresa. Recuperado de
+[https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
 
-Medina, F., & Galván, M. (2007). *Imputación de datos: Teoría y práctica*. Serie Estudios Estadísticos y Prospectivos, N.º 54. Santiago de Chile: ONU-CEPAL. <https://repositorio.cepal.org/server/api/core/bitstreams/02dd479f-fae2-43c4-b5ec-5419fa7f6190/content>
+Medina, F., & Galván, M. (2007). *Imputación de datos: Teoría y
+práctica*. Serie Estudios Estadísticos y Prospectivos, N.º 54. Santiago
+de Chile: ONU-CEPAL.
+<https://repositorio.cepal.org/server/api/core/bitstreams/02dd479f-fae2-43c4-b5ec-5419fa7f6190/content>
 
-Rosas, J. F. M., & Álvarez Verdejo, E. (2009). *Métodos de imputación para el tratamiento de datos faltantes: Aplicación mediante R/S-PLUS*. Revista de Métodos Cuantitativos para la Economía y la Empresa, (07), 03-30. [https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
+Rosas, J. F. M., & Álvarez Verdejo, E. (2009). *Métodos de imputación
+para el tratamiento de datos faltantes: Aplicación mediante R/S-PLUS*.
+Revista de Métodos Cuantitativos para la Economía y la Empresa, (07),
+03-30.
+[https://www.redalyc.org/pdf/2331/233117228001.pdf](https://www.redalyc.org/pdf/2331/233117228001.pdf?utm_source=chatgpt.com)
 
-Cousineau, D. (2010). *Outliers detection and treatment: A review*. International Journal of Psychological Research, 3(1), 58-67. [https://www.redalyc.org/pdf/2990/299023509004.pdf](https://www.redalyc.org/pdf/2990/299023509004.pdf?utm_source=chatgpt.com)
+Cousineau, D. (2010). *Outliers detection and treatment: A review*.
+International Journal of Psychological Research, 3(1), 58-67.
+[https://www.redalyc.org/pdf/2990/299023509004.pdf](https://www.redalyc.org/pdf/2990/299023509004.pdf?utm_source=chatgpt.com)
 
-Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
+Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to
+classify, detect, and manage univariate and multivariate outliers, with
+emphasis on pre-registration. *International Review of Social
+Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-
-=============================================================================================================== 
-# Bitácora 3 
+===============================================================================================================
+\# Bitácora 3
 =============================================================================================================== 
 1. Técnicas o Métodos Estadísticos Seleccionados
 
-Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
+Regresión Logística Binaria: para modelar la probabilidad de deserciónen función de factores individuales, sociales y académicos.
+
+2.Marco Metodológico 
+
+Etapas preliminares del analisis
+
+Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un conjunto de datos que nos ayuda a conocer sus principales características.
 
 Análisis Exploratorio de Datos (EDA): Para comprender la distribución y relaciones básicas entre variables.
 
-Regresión Logística Binaria: Para modelar la probabilidad de deserción en función de factores individuales, sociales y académicos.
-
-Análisis de Componentes Principales (PCA): Para reducir dimensionalidad e identificar patrones subyacentes.
-
-Matriz de Correlación: Para identificar relaciones lineales entre variables predictoras y la variable objetivo.
-
-2.  Marco Metodológico Regresión Logística Binaria La regresión logística modela la probabilidad de que un evento ocurra (en este caso, deserción) mediante la función logística:
+Método estadístico principal: Regresión Logística Binaria
+La regresión logística modela la probabilidad de que un evento ocurra (en este caso, deserción) mediante la función logística:
 
 P(Y=1/X)=1/(1+e\^−(β_0+β_1*X_1+⋯+β_p*X_p)) Donde:
 
 Y es la variable dependiente binaria (Dropout vs Graduate/Enrolled)
+X_1,…,X_p son las variables predictoras
+β_0,…,β_p son los coeficientes a estimar
+La estimación se realiza mediante máxima verosimilitud, maximizando la función:
 
-X_1,…,X_p son las variables predictoras β_0,…,β_p son los coeficientes a estimar La estimación se realiza mediante máxima verosimilitud, maximizando la función: ℓ(β)=∑(i=1 hasta n) \[y_i*log(p_i)+(1−y_i)*log(1−p_i)\] Análisis de Componentes Principales (PCA) El PCA transforma las variables originales en componentes ortogonales que maximizan la varianza en donde W es la matriz de autovectores de la matriz de covarianza de X
+ℓ(β)=∑(i=1 hasta n)\[y_i*log(p_i)+(1−y_i)*log(1−p_i)\]
 
-3- Aplique dichas técnicas o métodos. Presente los resultados, analícelos y responda su pregunta de investigación.
+Fundamento estadístico:
+  La regresión logística modela la relación entre un conjunto de variables predictoras y la probabilidad de ocurrencia del evento.
 
- **Estadística descriptiva**
+Justificación:
+  En nuestro caso, la regresión logística binaria es apropiada ya que nuestro análisis está centrado en una variable binaria, que toma el valor 1 en caso de "Dropout" y 0 en caso contrario. El uso de esta técnica permite evaluar cómo se relacionan múltiples factores, que en nuestro caso pueden ser académicos y socioeconómicos. Nos facilita la interpretación mediante odds ratios, además de ser un método confiable y simple, ampliamente utilizado en investigación.
+
+3- Aplique dichas técnicas o métodos. Presente los resultados,
+analícelos y responda su pregunta de investigación.
+
+**Estadística descriptiva**
 
 ```{r}
 columnas_seleccionadas <- datos[, c(
@@ -424,10 +556,14 @@ for(i in 1:ncol(columnas_seleccionadas)) { # Bucle para generar los histogramas,
        border = "black")
 }
 ```
-**analisis** 
-En el análisis estadístico nos ayuda a poder ver las variables, pudiendo analizar y comprar, tipo se puede ver uno como la moda, lo cual sería los valores más frecuentes, el rango difiere entre valores máximos y mínimos. En las gráficas se puede ver los histogramas, en el cual se puede ver las variables que se seleccionaron y se le signaron en columnas_seleccionadas, se grafica esto, para tener una idea del comportamiento de estas variables.
 
-
+**analisis** En el análisis estadístico nos ayuda a poder ver las
+variables, pudiendo analizar y comprar, tipo se puede ver uno como la
+moda, lo cual sería los valores más frecuentes, el rango difiere entre
+valores máximos y mínimos. En las gráficas se puede ver los histogramas,
+en el cual se puede ver las variables que se seleccionaron y se le
+signaron en columnas_seleccionadas, se grafica esto, para tener una idea
+del comportamiento de estas variables.
 
 *Este apartado es para los tipos de variables*
 
@@ -489,7 +625,8 @@ tabla_cat
 
 # **Aplicando Regresión Logística**
 
-Nota: Se utilizaron más técnicas para verificar la veracidad de la información obtenida, de esta manera, se presentan los resultados
+Nota: Se utilizaron más técnicas para verificar la veracidad de la
+información obtenida, de esta manera, se presentan los resultados
 
 ```{r}
 #install.packages("rcompanion")
@@ -559,11 +696,13 @@ vif(modelo)
 
 ***Nagelkerke= 0.638***
 
-Un pseudo-R² de 0.63 es excelente para un modelo de regresión logística, ya que logra explicar un 63% de la probabilidad de deserción.
+Un pseudo-R² de 0.63 es excelente para un modelo de regresión logística,
+ya que logra explicar un 63% de la probabilidad de deserción.
 
 ***AUC*** **= 0.915**
 
-Esto quiere decir que es un modelo altamente predictivo, ya que según su escala, por encima del 0.90 es un modelo sobresaliente
+Esto quiere decir que es un modelo altamente predictivo, ya que según su
+escala, por encima del 0.90 es un modelo sobresaliente
 
 ## **Interpretación de coeficientes importantes (Odds Ratios)**
 
@@ -572,20 +711,21 @@ Esto quiere decir que es un modelo altamente predictivo, ya que según su escala
 Son las más relevantes. Dominan completamente el modelo.
 
 | Variable | OR | Interpretación |
-|---------------|--------|------------------------|
+|------------------------|------------------------|------------------------|
 | 1st.sem.enrolled | **1.21** | Cada curso *inscrito* extra implica que aumente la probabilidad de deserción 21% |
 | 1st.sem.approved | **0.80** | Cada curso aprobado extra implica que reduce un 20% la probabilidad |
 | 2nd.sem.enrolled | **1.57** | Los estudiantes “sobrecargados” tienden a salirse |
 | 2nd.sem.approved | **0.52** | Cada aprobación implica que reduzca la probabilidad en casi 50% |
 
-**Conclusión:** La carga académica y el rendimiento explican casi toda la deserción.
+**Conclusión:** La carga académica y el rendimiento explican casi toda
+la deserción.
 
 ------------------------------------------------------------------------
 
 ### **Variables financieras**
 
 | Variable | OR | Interpretación |
-|------------------|---------|------------------------|
+|------------------------|------------------------|------------------------|
 | Tuition.fees.up.to.date | **0.10** | Estar al día reduce la deserción un 90% |
 | Debtor | **1.61** | Los deudores hacen que aumente un 61% la probabilidad |
 
@@ -596,7 +736,7 @@ Son las más relevantes. Dominan completamente el modelo.
 ### **Variables personales**
 
 | Variable           | OR       | Interpretación                                 |
-|----------------|----------------|-----------------------------------------|
+|-----------------|-----------------|--------------------------------------|
 | Age.at.enrollment  | **1.05** | Más edad → ↑ riesgo pequeño pero significativo |
 | Gender (Hombres)   | **1.37** | Mayor riesgo que las mujeres                   |
 | Scholarship.holder | **0.56** | Becarios desertan menos                        |
@@ -608,7 +748,7 @@ Son las más relevantes. Dominan completamente el modelo.
 Estás variables aportan, pero marginalmente.
 
 | Variable               | p-valor | OR    | Conclusión                         |
-|------------------|-------------|-------------|----------------------------|
+|----------------|----------------|----------------|-------------------------|
 | Mother.s.qualification | 0.027   | 1.008 | Efecto pequeño, pero significativo |
 | Mother.s.occupation    | 0.009   | 0.988 | Ligera reducción del riesgo        |
 
@@ -634,13 +774,20 @@ El código presenta lo siguiente:
 -   Sensibilidad ≈ 73%
 -   Especificidad ≈ 94%
 
-Así, el modelo detecta muy bien a los que NO desertan; sin embargo, se pierde un porcentaje considerable de desertores (379 casos).
+Así, el modelo detecta muy bien a los que NO desertan; sin embargo, se
+pierde un porcentaje considerable de desertores (379 casos).
 
 ------------------------------------------------------------------------
 
 # **Conclusiones claras**
 
-Así entonces, podemos concluir, gracias a la técnica de Regresión Logística, que los factores que afectan más a las deserciones en educación superior son los factores financieros y académicos. Además, se presentan los factores personales y familiares, los cuales generan un aporte en la deserción, pero no de manera tan significativa. De igual manera, existen factores geográficos y personales que no afectan en lo absoluto en la deserción.
+Así entonces, podemos concluir, gracias a la técnica de Regresión
+Logística, que los factores que afectan más a las deserciones en
+educación superior son los factores financieros y académicos. Además, se
+presentan los factores personales y familiares, los cuales generan un
+aporte en la deserción, pero no de manera tan significativa. De igual
+manera, existen factores geográficos y personales que no afectan en lo
+absoluto en la deserción.
 
 ------------------------------------------------------------------------
 
