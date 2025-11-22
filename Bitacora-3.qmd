@@ -464,6 +464,8 @@ Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 =============================================================================================================== 
 1. Técnicas o Métodos Estadísticos Seleccionados
 
+Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
+
 Regresión Logística Binaria: para modelar la probabilidad de deserciónen función de factores individuales, sociales y académicos.
 
 2.Marco Metodológico 
