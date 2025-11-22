@@ -363,7 +363,7 @@ X_1,…,X_p son las variables predictoras β_0,…,β_p son los coeficientes a e
 
 3- Aplique dichas técnicas o métodos. Presente los resultados, analícelos y responda su pregunta de investigación.
 
-Estadística descriptiva
+ **Estadística descriptiva**
 
 ```{r}
 columnas_seleccionadas <- datos[, c(
@@ -410,12 +410,12 @@ print(estadisticas_descrip)
 ```
 
 ```{r}
-par(mfrow = c(2, 4))  
+par(mfrow = c(2, 4))  # Parámetros gráficos 
 
-nombres_var <- names(columnas_seleccionadas)
+nombres_var <- names(columnas_seleccionadas) # Extrae los nombres y los asigna al vector nombre_var
 
-for(i in 1:ncol(columnas_seleccionadas)) {
-  hist(columnas_seleccionadas[[i]], 
+for(i in 1:ncol(columnas_seleccionadas)) { # Bucle para generar los histogramas, iterando sobre las variables del data frame
+  hist(columnas_seleccionadas[[i]], #Estructura que va a tener el histograma 
        main = nombres_var[i],
        cex.main = 0.9, 
        xlab = "Valor",
@@ -424,8 +424,12 @@ for(i in 1:ncol(columnas_seleccionadas)) {
        border = "black")
 }
 ```
+**analisis** 
+En el análisis estadístico nos ayuda a poder ver las variables, pudiendo analizar y comprar, tipo se puede ver uno como la moda, lo cual sería los valores más frecuentes, el rango difiere entre valores máximos y mínimos. En las gráficas se puede ver los histogramas, en el cual se puede ver las variables que se seleccionaron y se le signaron en columnas_seleccionadas, se grafica esto, para tener una idea del comportamiento de estas variables.
 
-Este apartado es para los tipos de variables
+
+
+*Este apartado es para los tipos de variables*
 
 ```{r}
 datos_num <- datos %>%
