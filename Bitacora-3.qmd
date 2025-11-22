@@ -180,6 +180,7 @@ Dzay Chulim, F., & Narváez Trejo, O. M. (2012). *La deserción escolar
 desde la perspectiva estudiantil*. La Editorial Manda.
 [https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf](https://www.uv.mx/personal/onarvaez/files/2013/02/la-desercion-escolar.pdf?utm_source=chatgpt.com)
 
+
 # Bitácora 2
 
 ## Datos
@@ -459,9 +460,9 @@ classify, detect, and manage univariate and multivariate outliers, with
 emphasis on pre-registration. *International Review of Social
 Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-===============================================================================================================
-\# Bitácora 3
-=============================================================================================================== 
+
+# Bitácora 3
+
 1. Técnicas o Métodos Estadísticos Seleccionados
 
 Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
@@ -960,4 +961,6 @@ datos %>%
     y = "Número de créditos",
     fill = ""
   )
-```
+``` 
+
+#### Bibliografía:
