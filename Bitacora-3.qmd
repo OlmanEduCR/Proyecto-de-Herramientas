@@ -463,9 +463,30 @@ Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
 # Bitácora 3
 
-1. Técnicas o Métodos Estadísticos Seleccionados
+Para facilitar la revisión de la bitácora 3, se adjunta los paquetes que se tienen que cargar, además de la carga del archivo
 
-Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
+```{r}
+#install.packages("rcompanion")
+#install.packages("ResourceSelection")
+#install.packages("pROC")
+#install.packages("car")
+
+library(rcompanion)
+library(ResourceSelection)
+library(pROC)
+library(car)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+datos <- read.csv2("data.csv", sep = ";", header = TRUE, stringsAsFactors = FALSE)
+datos <- datos %>%
+  select(-GDP) ### El uso de esta variable es irrelevante
+
+```
+
+
+1. Técnicas o Métodos Estadísticos Seleccionados
 
 Regresión Logística Binaria: para modelar la probabilidad de deserciónen función de factores individuales, sociales y académicos.
 
@@ -499,6 +520,7 @@ Justificación:
 analícelos y responda su pregunta de investigación.
 
 **Estadística descriptiva**
+Permite recolectar, organizar, analizar y presentar conjuntos de datos para identificar y comprender sus características principales, patrones y tendencias.
 
 ```{r}
 columnas_seleccionadas <- datos[, c(
@@ -517,7 +539,8 @@ columnas_seleccionadas <- as.data.frame(lapply(columnas_seleccionadas, function(
     return(x)
   }
 }))
-str(columnas_seleccionadas)
+#str(columnas_seleccionadas)
+#Se imprimió cuando se estaba analizando para tener mejor comprensión
 ```
 
 ```{r}
@@ -560,7 +583,8 @@ for(i in 1:ncol(columnas_seleccionadas)) { # Bucle para generar los histogramas,
 }
 ```
 
-**analisis** En el análisis estadístico nos ayuda a poder ver las
+**analisis** 
+En el análisis estadístico nos ayuda a poder ver las
 variables, pudiendo analizar y comprar, tipo se puede ver uno como la
 moda, lo cual sería los valores más frecuentes, el rango difiere entre
 valores máximos y mínimos. En las gráficas se puede ver los histogramas,
@@ -568,10 +592,7 @@ en el cual se puede ver las variables que se seleccionaron y se le
 signaron en columnas_seleccionadas, se grafica esto, para tener una idea
 del comportamiento de estas variables.
 
-
-
-
-Gráficos relacionados:
+**Gráficos de las variables que tienen relación directa con Target:**
 
 ```{r}
 datos %>%
@@ -609,15 +630,15 @@ datos %>%
   mutate(
     Target = factor(Target,
                     levels = c("Graduate", "Enrolled", "Dropout"),
-                    labels = c("No Desertor", "No Desertor", "Desertor"))
+                    labels = c("No Desertor", "No Desertor", "Desertor")),
+    Gender = factor(Gender, levels = c(0, 1), labels = c("Mujer", "Hombre"))
   ) %>%
-  # Agrupar para proporciones
   group_by(Gender, Target) %>%
   summarise(n = n(), .groups = "drop") %>%
   group_by(Gender) %>%
   mutate(prop = n / sum(n)) %>%
   
-  ggplot(aes(x = factor(Gender), y = prop, fill = Target)) +
+  ggplot(aes(x = Gender, y = prop, fill = Target)) +
   geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
   geom_text(
     aes(label = paste0(round(prop * 100, 1), "%")),
@@ -626,14 +647,11 @@ datos %>%
     fontface = "bold",
     size = 4
   ) +
-  
   scale_fill_manual(values = c("steelblue", "firebrick")) +
-  
   scale_y_continuous(labels = scales::percent) +
-  
   labs(
     title = "Distribución de Deserción por Género",
-    x = "Género (0 = Mujer, 1 = Hombre)",
+    x = "Género",
     y = "Proporción",
     fill = "Estado"
   )
@@ -697,7 +715,7 @@ datos %>%
   ) +
   
   labs(
-    title = "Distribución de Créditos Matriculados y Aprobados en el 1er Semestre según Estado Académico",
+    title = "Créditos 1er Semestre: Matriculados y Aprobados según Estado Académico",
     x = "Estado académico",
     y = "Número de créditos",
     fill = ""
@@ -733,10 +751,196 @@ datos %>%
   ) +
   
   labs(
-    title = "Distribución de Créditos Matriculados y Aprobados en el 2do Semestre según Estado Académico",
+    title = "Créditos 2do Semestre: Matriculados y Aprobados según Estado Académico",
     x = "Estado académico",
     y = "Número de créditos",
     fill = ""
+  )
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(
+      Target,
+      levels = c("Graduate", "Enrolled", "Dropout"),
+      labels = c("No Desertor", "No Desertor", "Desertor")
+    ),
+    Marital.status = factor(
+      Marital.status,
+      levels = c(1, 2, 3, 4, 5, 6),
+      labels = c("Soltero", "Casado", "Viudo", "Divorciado", "Unión Lib", "Separado")
+    )
+  ) %>%
+  group_by(Marital.status, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Marital.status) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = Marital.status, y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    title = "Distribución de Deserción por Estado Civil",
+    x = "Estado Civil",
+    y = "Proporción",
+    fill = "Estado"
+  ) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 1))
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(Target,
+                    levels = c("Graduate", "Enrolled", "Dropout"),
+                    labels = c("No Desertor", "No Desertor", "Desertor")),
+    Educational.special.needs = factor(Educational.special.needs, levels = c(0, 1), 
+                                      labels = c("No", "Sí"))
+  ) %>%
+  # Agrupar para proporciones
+  group_by(Educational.special.needs, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Educational.special.needs) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = Educational.special.needs, y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  
+  scale_y_continuous(labels = scales::percent) +
+  
+  labs(
+    title = "Distribución de Deserción por Necesidades Educativas Especiales",
+    x = "Necesidades Educativas Especiales",
+    y = "Proporción",
+    fill = "Estado"
+  )
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(Target,
+                    levels = c("Graduate", "Enrolled", "Dropout"),
+                    labels = c("No Desertor", "No Desertor", "Desertor")),
+    Debtor = factor(Debtor, levels = c(0, 1), labels = c("No Deudor", "Deudor"))
+  ) %>%
+  # Agrupar para proporciones
+  group_by(Debtor, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Debtor) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = Debtor, y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  
+  scale_y_continuous(labels = scales::percent) +
+  
+  labs(
+    title = "Distribución de Deserción por Condición de Deudor",
+    x = "Condición de Deudor",
+    y = "Proporción",
+    fill = "Estado"
+  )
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(Target,
+                    levels = c("Graduate", "Enrolled", "Dropout"),
+                    labels = c("No Desertor", "No Desertor", "Desertor")),
+    Scholarship.holder = factor(Scholarship.holder, levels = c(0, 1), 
+                               labels = c("No Becario", "Becario"))
+  ) %>%
+  # Agrupar para proporciones
+  group_by(Scholarship.holder, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(Scholarship.holder) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = Scholarship.holder, y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  
+  scale_y_continuous(labels = scales::percent) +
+  
+  labs(
+    title = "Distribución de Deserción por Condición de Becario",
+    x = "Condición de Becario",
+    y = "Proporción",
+    fill = "Estado"
+  )
+```
+
+```{r}
+datos %>%
+  mutate(
+    Target = factor(Target,
+                    levels = c("Graduate", "Enrolled", "Dropout"),
+                    labels = c("No Desertor", "No Desertor", "Desertor")),
+    International = factor(International, levels = c(0, 1), 
+                          labels = c("Nacional", "Internacional"))
+  ) %>%
+  # Agrupar para proporciones
+  group_by(International, Target) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  group_by(International) %>%
+  mutate(prop = n / sum(n)) %>%
+  
+  ggplot(aes(x = International, y = prop, fill = Target)) +
+  geom_bar(stat = "identity", position = "stack", alpha = 0.9) +
+  geom_text(
+    aes(label = paste0(round(prop * 100, 1), "%")),
+    position = position_stack(vjust = 0.5),
+    color = "white",
+    fontface = "bold",
+    size = 4
+  ) +
+  
+  scale_fill_manual(values = c("steelblue", "firebrick")) +
+  
+  scale_y_continuous(labels = scales::percent) +
+  
+  labs(
+    title = "Distribución de Deserción por Condición de Estudiante Internacional",
+    x = "Tipo de Estudiante",
+    y = "Proporción",
+    fill = "Estado"
   )
 ```
 
@@ -799,21 +1003,12 @@ tabla_cat <- data.frame(
 tabla_cat
 ```
 
-# **Aplicando Regresión Logística**
 
+# **Aplicando Regresión Logística**
 Nota: Se utilizaron más técnicas para verificar la veracidad de la
 información obtenida, de esta manera, se presentan los resultados
 
 ```{r}
-#install.packages("rcompanion")
-#install.packages("ResourceSelection")
-#install.packages("pROC")
-#install.packages("car")
-
-library(rcompanion)
-library(ResourceSelection)
-library(pROC)
-library(car)
 ### Pasamos los casos de Desertor y Matriculado/Graduado a 1,0 respectivamente
 datos$Target_bin <- ifelse(datos$Target == "Dropout", 1, 0)
 datos$Target_bin <- factor(datos$Target_bin, levels = c(0, 1))
@@ -868,7 +1063,6 @@ auc(roc_curve)
 vif(modelo)
 ```
 
- 
 
 **Calidad global del modelo**
 
