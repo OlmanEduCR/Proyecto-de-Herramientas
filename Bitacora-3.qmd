@@ -337,7 +337,11 @@ Cousineau, D. (2010). *Outliers detection and treatment: A review*. Internationa
 
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-=============================================================================================================== \# Bitácora 3 =============================================================================================================== 1. Técnicas o Métodos Estadísticos Seleccionados
+
+=============================================================================================================== 
+# Bitácora 3 
+=============================================================================================================== 
+1. Técnicas o Métodos Estadísticos Seleccionados
 
 Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
 
@@ -379,7 +383,6 @@ columnas_seleccionadas <- as.data.frame(lapply(columnas_seleccionadas, function(
   }
 }))
 str(columnas_seleccionadas)
-
 ```
 
 ```{r}
@@ -391,8 +394,6 @@ calcular_moda <- function(x){
   moda <- as.numeric((names(tabla)[tabla == max(tabla)]))
   return(moda[1])
 }
-
-calcular_moda()
 ```
 
 ```{r}
@@ -487,6 +488,11 @@ tabla_cat
 Nota: Se utilizaron más técnicas para verificar la verasidad de la información obtenida, de esta manera, se presentan los resultados
 
 ```{r}
+#install.packages("rcompanion")
+#install.packages("ResourceSelection")
+#install.packages("pROC")
+#install.packages("car")
+
 library(rcompanion)
 library(ResourceSelection)
 library(pROC)
@@ -543,7 +549,6 @@ auc(roc_curve)
 
 ### Revisar multicolinealidad (VIF)
 vif(modelo)
-
 ```
 
 **Calidad global del modelo**
