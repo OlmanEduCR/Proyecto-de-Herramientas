@@ -337,11 +337,7 @@ Cousineau, D. (2010). *Outliers detection and treatment: A review*. Internationa
 
 Leys, C., Delacre, M., Mora, Y. L., Lakens, D., & Ley, C. (2019). How to classify, detect, and manage univariate and multivariate outliers, with emphasis on pre-registration. *International Review of Social Psychology, 32*(1). <https://doi.org/10.5334/irsp.289>
 
-
-===============================================================================================================
-# Bitácora 3
-===============================================================================================================
-1. Técnicas o Métodos Estadísticos Seleccionados
+=============================================================================================================== \# Bitácora 3 =============================================================================================================== 1. Técnicas o Métodos Estadísticos Seleccionados
 
 Estadística descriptiva: Nos ayuda a recolectar, organizar, analizar y presentar un junto de datos que nos ayudan a saber sus principales características
 
@@ -353,24 +349,13 @@ Análisis de Componentes Principales (PCA): Para reducir dimensionalidad e ident
 
 Matriz de Correlación: Para identificar relaciones lineales entre variables predictoras y la variable objetivo.
 
+2.  Marco Metodológico Regresión Logística Binaria La regresión logística modela la probabilidad de que un evento ocurra (en este caso, deserción) mediante la función logística:
 
-
-2. Marco Metodológico
-Regresión Logística Binaria
-La regresión logística modela la probabilidad de que un evento ocurra (en este caso, deserción) mediante la función logística:
-
-P(Y=1/X)=1/(1+e^−(β_0+β_1*X_1+⋯+β_p*X_p))
-Donde:
+P(Y=1/X)=1/(1+e\^−(β_0+β_1*X_1+⋯+β_p*X_p)) Donde:
 
 Y es la variable dependiente binaria (Dropout vs Graduate/Enrolled)
 
-X_1,…,X_p son las variables predictoras
-β_0,…,β_p  son los coeficientes a estimar
-La estimación se realiza mediante máxima verosimilitud, maximizando la función:
-ℓ(β)=∑(i=1 hasta n) [y_i*log(p_i)+(1−y_i)*log(1−p_i)]
-Análisis de Componentes Principales (PCA)
-El PCA transforma las variables originales en componentes ortogonales que maximizan la varianza en donde W es la matriz de autovectores de la matriz de covarianza de X
-
+X_1,…,X_p son las variables predictoras β_0,…,β_p son los coeficientes a estimar La estimación se realiza mediante máxima verosimilitud, maximizando la función: ℓ(β)=∑(i=1 hasta n) \[y_i*log(p_i)+(1−y_i)*log(1−p_i)\] Análisis de Componentes Principales (PCA) El PCA transforma las variables originales en componentes ortogonales que maximizan la varianza en donde W es la matriz de autovectores de la matriz de covarianza de X
 
 3- Aplique dichas técnicas o métodos. Presente los resultados, analícelos y responda su pregunta de investigación.
 
@@ -497,9 +482,15 @@ tabla_cat <- data.frame(
 tabla_cat
 ```
 
-Aplicando Regresión Logística
-```{r}
+# **Aplicando Regresión Logística**
 
+Nota: Se utilizaron más técnicas para verificar la verasidad de la información obtenida, de esta manera, se presentan los resultados
+
+```{r}
+library(rcompanion)
+library(ResourceSelection)
+library(pROC)
+library(car)
 ### Pasamos los casos de Desertor y Matriculado/Graduado a 1,0 respectivamente
 datos$Target_bin <- ifelse(datos$Target == "Dropout", 1, 0)
 datos$Target_bin <- factor(datos$Target_bin, levels = c(0, 1))
@@ -516,13 +507,135 @@ modelo <- glm(Target_bin ~ Age.at.enrollment +
                 Debtor + 
                 Tuition.fees.up.to.date + 
                 Gender + 
-                Scholarship.holder, data = datos, family = binomial)
+                Scholarship.holder +
+                International +
+                Mother.s.qualification +
+                Father.s.qualification +
+                Mother.s.occupation +
+                Father.s.occupation, 
+              data = datos, 
+              family = binomial)
 
 summary(modelo)
 
+### Convertir coeficientes a Odds Ratios
 
+exp(coef(modelo))
+## intervalos de confianza
+exp(confint(modelo))
+
+### Evaluación del modelo
+
+# Nagelkerke
+nagelkerke(modelo)
+
+# Matriz de confusión
+prob <- predict(modelo, type = "response")
+pred <- ifelse(prob > 0.5, 1, 0)
+pred <- factor(pred, levels = c(0, 1))
+
+table(Predicción = pred, Real = datos$Target_bin)
+
+# Curva ROC y AUC
+
+roc_curve <- roc(datos$Target_bin, prob)
+auc(roc_curve)
+
+### Revisar multicolinealidad (VIF)
+vif(modelo)
 
 ```
+
+**Calidad global del modelo**
+
+***Nagelkerke= 0.638***
+
+Un pseudo-R² de 0.63 es excelente para un modelo de regresión logística, ya que logra explicar un 63% de la probabilidad de deserción.
+
+***AUC*** **= 0.915**
+
+Esto quiere decir que es un modelo altamente predictivo, ya que según su escala, por encima del 0.90 es un modelo sobresaliente
+
+## **Interpretación de coeficientes importantes (Odds Ratios)**
+
+### Variables académicas
+
+Son las más relevantes. Dominan completamente el modelo.
+
+| Variable | OR | Interpretación |
+|---------------|--------|------------------------|
+| 1st.sem.enrolled | **1.21** | Cada curso *inscrito* extra implica que aumente la probabilidad de deserción 21% |
+| 1st.sem.approved | **0.80** | Cada curso aprobado extra implica que reduce un 20% la probabilidad |
+| 2nd.sem.enrolled | **1.57** | Los estudiantes “sobrecargados” tienden a salirse |
+| 2nd.sem.approved | **0.52** | Cada aprobación implica que reduzca la probabilidad en casi 50% |
+
+**Conclusión:** La carga académica y el rendimiento explican casi toda la deserción.
+
+------------------------------------------------------------------------
+
+### **Variables financieras**
+
+| Variable | OR | Interpretación |
+|------------------|---------|------------------------|
+| Tuition.fees.up.to.date | **0.10** | Estar al día reduce la deserción un 90% |
+| Debtor | **1.61** | Los deudores hacen que aumente un 61% la probabilidad |
+
+**Conclusión:** Las finanzas son otro bloque crítico.
+
+------------------------------------------------------------------------
+
+### **Variables personales**
+
+| Variable           | OR       | Interpretación                                 |
+|----------------|----------------|-----------------------------------------|
+| Age.at.enrollment  | **1.05** | Más edad → ↑ riesgo pequeño pero significativo |
+| Gender (Hombres)   | **1.37** | Mayor riesgo que las mujeres                   |
+| Scholarship.holder | **0.56** | Becarios desertan menos                        |
+
+------------------------------------------------------------------------
+
+### **Variables familiares**
+
+Estás variables aportan, pero marginalmente.
+
+| Variable               | p-valor | OR    | Conclusión                         |
+|------------------|-------------|-------------|----------------------------|
+| Mother.s.qualification | 0.027   | 1.008 | Efecto pequeño, pero significativo |
+| Mother.s.occupation    | 0.009   | 0.988 | Ligera reducción del riesgo        |
+
+### Variables que no aportan
+
+-   Toda variable relacionada con el padre
+-   La nacionalidad
+
+------------------------------------------------------------------------
+
+# **Matriz de confusión**
+
+El código presenta lo siguiente:
+
+-   Verdaderos negativos: 2836
+-   Falsos negativos: 379
+-   Verdaderos positivos: 1042
+-   Falsos positivos: 167
+
+### Métricas aproximadas:
+
+-   Efectividad ≈ 88.0%
+-   Sensibilidad ≈ 73%
+-   Especificidad ≈ 94%
+
+Así, el modelo detecta muy bien a los que NO desertan; sin embargo, se pierde un porcentaje considerable de desertores (379 casos).
+
+------------------------------------------------------------------------
+
+# **Conclusiones claras**
+
+Así entonces, podemos concluir gracias a la técnica de Regresión Logística, que los factores que afectan más a las deserciones en educación superior son los factores financieros y académicos. Además, se presentan los factores personales y familiares, los cuales generan un aporte en la deserción, pero no de manera tan significativa. De igual manera, exiten factores geográficos y personales que no afectan en lo absoluto en la deserción.
+
+------------------------------------------------------------------------
+
+Gráficos relacionados:
 
 ```{r}
 datos %>%
@@ -590,7 +703,6 @@ datos %>%
   )
 ```
 
-
 ```{r}
 datos %>%
   mutate(
@@ -619,7 +731,6 @@ datos %>%
     color = "Estado"
   )
 ```
-
 
 ```{r}
 datos %>%
@@ -657,7 +768,6 @@ datos %>%
   )
 ```
 
-
 ```{r}
 datos %>%
   mutate(
@@ -693,4 +803,3 @@ datos %>%
     fill = ""
   )
 ```
-
