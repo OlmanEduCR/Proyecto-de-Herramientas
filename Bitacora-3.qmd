@@ -489,7 +489,7 @@ tabla_cat
 
 # **Aplicando Regresión Logística**
 
-Nota: Se utilizaron más técnicas para verificar la verasidad de la información obtenida, de esta manera, se presentan los resultados
+Nota: Se utilizaron más técnicas para verificar la veracidad de la información obtenida, de esta manera, se presentan los resultados
 
 ```{r}
 #install.packages("rcompanion")
@@ -640,7 +640,7 @@ Así, el modelo detecta muy bien a los que NO desertan; sin embargo, se pierde u
 
 # **Conclusiones claras**
 
-Así entonces, podemos concluir gracias a la técnica de Regresión Logística, que los factores que afectan más a las deserciones en educación superior son los factores financieros y académicos. Además, se presentan los factores personales y familiares, los cuales generan un aporte en la deserción, pero no de manera tan significativa. De igual manera, exiten factores geográficos y personales que no afectan en lo absoluto en la deserción.
+Así entonces, podemos concluir, gracias a la técnica de Regresión Logística, que los factores que afectan más a las deserciones en educación superior son los factores financieros y académicos. Además, se presentan los factores personales y familiares, los cuales generan un aporte en la deserción, pero no de manera tan significativa. De igual manera, existen factores geográficos y personales que no afectan en lo absoluto en la deserción.
 
 ------------------------------------------------------------------------
 
