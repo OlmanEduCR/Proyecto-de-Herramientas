@@ -568,132 +568,8 @@ en el cual se puede ver las variables que se seleccionaron y se le
 signaron en columnas_seleccionadas, se grafica esto, para tener una idea
 del comportamiento de estas variables.
 
-*Este apartado es para los tipos de variables*
 
-```{r}
-datos_num <- datos %>%
-  select(
-    Previous.qualification..grade.,
-    Application.order,
-    Admission.grade,
-    Age.at.enrollment,
-    Curricular.units.1st.sem..credited.,
-    Curricular.units.1st.sem..enrolled.,
-    Curricular.units.1st.sem..approved.,
-    Curricular.units.1st.sem..evaluations.,
-    Curricular.units.1st.sem..grade.,
-    Curricular.units.1st.sem..without.evaluations.,
-    Curricular.units.2nd.sem..credited.,
-    Curricular.units.2nd.sem..enrolled.,
-    Curricular.units.2nd.sem..evaluations.,
-    Curricular.units.2nd.sem..approved.,
-    Curricular.units.2nd.sem..grade.,
-    Curricular.units.2nd.sem..without.evaluations.,
-  )
 
-tabla_num <- data.frame(
-  Variables_Numericas = names(datos_num)
-)
-
-tabla_num
-
-datos_cat <- datos %>%
-  select(
-    Marital.status,
-    Application.mode,
-    Course,
-    Daytime.evening.attendance.,
-    Previous.qualification,
-    Nacionality,
-    Mother.s.qualification,
-    Father.s.qualification,
-    Mother.s.occupation,
-    Father.s.occupation,
-    Displaced,
-    Educational.special.needs,
-    Debtor,
-    Tuition.fees.up.to.date,
-    Gender,
-    Scholarship.holder,
-    International,
-    Target
-  )
-
-tabla_cat <- data.frame(
-  Variables_Categoricas = names(datos_cat)
-)
-
-tabla_cat
-```
-
-# **Aplicando Regresión Logística**
-
-Nota: Se utilizaron más técnicas para verificar la veracidad de la
-información obtenida, de esta manera, se presentan los resultados
-
-```{r}
-#install.packages("rcompanion")
-#install.packages("ResourceSelection")
-#install.packages("pROC")
-#install.packages("car")
-
-library(rcompanion)
-library(ResourceSelection)
-library(pROC)
-library(car)
-### Pasamos los casos de Desertor y Matriculado/Graduado a 1,0 respectivamente
-datos$Target_bin <- ifelse(datos$Target == "Dropout", 1, 0)
-datos$Target_bin <- factor(datos$Target_bin, levels = c(0, 1))
-
-modelo <- glm(Target_bin ~ Age.at.enrollment + 
-                Curricular.units.1st.sem..enrolled. + 
-                Curricular.units.1st.sem..approved. + 
-                Curricular.units.2nd.sem..enrolled. + 
-                Curricular.units.2nd.sem..approved. + 
-                Marital.status + 
-                Course + 
-                Displaced + 
-                Educational.special.needs + 
-                Debtor + 
-                Tuition.fees.up.to.date + 
-                Gender + 
-                Scholarship.holder +
-                International +
-                Mother.s.qualification +
-                Father.s.qualification +
-                Mother.s.occupation +
-                Father.s.occupation, 
-              data = datos, 
-              family = binomial)
-
-summary(modelo)
-
-### Convertir coeficientes a Odds Ratios
-
-exp(coef(modelo))
-## intervalos de confianza
-exp(confint(modelo))
-
-### Evaluación del modelo
-
-# Nagelkerke
-nagelkerke(modelo)
-
-# Matriz de confusión
-prob <- predict(modelo, type = "response")
-pred <- ifelse(prob > 0.5, 1, 0)
-pred <- factor(pred, levels = c(0, 1))
-
-table(Predicción = pred, Real = datos$Target_bin)
-
-# Curva ROC y AUC
-
-roc_curve <- roc(datos$Target_bin, prob)
-auc(roc_curve)
-
-### Revisar multicolinealidad (VIF)
-vif(modelo)
-```
 
 Gráficos relacionados:
 
@@ -862,7 +738,137 @@ datos %>%
     y = "Número de créditos",
     fill = ""
   )
-``` 
+```
+
+
+*Este apartado es para los tipos de variables*
+
+```{r}
+datos_num <- datos %>%
+  select(
+    Previous.qualification..grade.,
+    Application.order,
+    Admission.grade,
+    Age.at.enrollment,
+    Curricular.units.1st.sem..credited.,
+    Curricular.units.1st.sem..enrolled.,
+    Curricular.units.1st.sem..approved.,
+    Curricular.units.1st.sem..evaluations.,
+    Curricular.units.1st.sem..grade.,
+    Curricular.units.1st.sem..without.evaluations.,
+    Curricular.units.2nd.sem..credited.,
+    Curricular.units.2nd.sem..enrolled.,
+    Curricular.units.2nd.sem..evaluations.,
+    Curricular.units.2nd.sem..approved.,
+    Curricular.units.2nd.sem..grade.,
+    Curricular.units.2nd.sem..without.evaluations.,
+  )
+
+tabla_num <- data.frame(
+  Variables_Numericas = names(datos_num)
+)
+
+tabla_num
+
+datos_cat <- datos %>%
+  select(
+    Marital.status,
+    Application.mode,
+    Course,
+    Daytime.evening.attendance.,
+    Previous.qualification,
+    Nacionality,
+    Mother.s.qualification,
+    Father.s.qualification,
+    Mother.s.occupation,
+    Father.s.occupation,
+    Displaced,
+    Educational.special.needs,
+    Debtor,
+    Tuition.fees.up.to.date,
+    Gender,
+    Scholarship.holder,
+    International,
+    Target
+  )
+
+tabla_cat <- data.frame(
+  Variables_Categoricas = names(datos_cat)
+)
+
+tabla_cat
+```
+
+# **Aplicando Regresión Logística**
+
+Nota: Se utilizaron más técnicas para verificar la veracidad de la
+información obtenida, de esta manera, se presentan los resultados
+
+```{r}
+#install.packages("rcompanion")
+#install.packages("ResourceSelection")
+#install.packages("pROC")
+#install.packages("car")
+
+library(rcompanion)
+library(ResourceSelection)
+library(pROC)
+library(car)
+### Pasamos los casos de Desertor y Matriculado/Graduado a 1,0 respectivamente
+datos$Target_bin <- ifelse(datos$Target == "Dropout", 1, 0)
+datos$Target_bin <- factor(datos$Target_bin, levels = c(0, 1))
+
+modelo <- glm(Target_bin ~ Age.at.enrollment + 
+                Curricular.units.1st.sem..enrolled. + 
+                Curricular.units.1st.sem..approved. + 
+                Curricular.units.2nd.sem..enrolled. + 
+                Curricular.units.2nd.sem..approved. + 
+                Marital.status + 
+                Course + 
+                Displaced + 
+                Educational.special.needs + 
+                Debtor + 
+                Tuition.fees.up.to.date + 
+                Gender + 
+                Scholarship.holder +
+                International +
+                Mother.s.qualification +
+                Father.s.qualification +
+                Mother.s.occupation +
+                Father.s.occupation, 
+              data = datos, 
+              family = binomial)
+
+summary(modelo)
+
+### Convertir coeficientes a Odds Ratios
+
+exp(coef(modelo))
+## intervalos de confianza
+exp(confint(modelo))
+
+### Evaluación del modelo
+
+# Nagelkerke
+nagelkerke(modelo)
+
+# Matriz de confusión
+prob <- predict(modelo, type = "response")
+pred <- ifelse(prob > 0.5, 1, 0)
+pred <- factor(pred, levels = c(0, 1))
+
+table(Predicción = pred, Real = datos$Target_bin)
+
+# Curva ROC y AUC
+
+roc_curve <- roc(datos$Target_bin, prob)
+auc(roc_curve)
+
+### Revisar multicolinealidad (VIF)
+vif(modelo)
+```
+
+ 
 
 **Calidad global del modelo**
 
